@@ -1,5 +1,5 @@
 from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
-from helpers import get_vocab_list, find_passage, pick_passage, BEST_PASSAGE, login_required, apology
+from helpers import get_vocab_list
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 # from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
@@ -73,14 +73,17 @@ target_language = "english"
 unit = 0
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE>
-    # session.pop("passage", None)
-    # session.pop("commands", None)
+    if request.method == 'GET':
+        return render_template('index.html')
+    # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
 
-    return render_template("index.html")
+    native_language = request.form.get('native_language')
+    target_language = request.form.get('target_language')
 
+    return redirect("/unitselect")
+    
 
 @app.route("/unitselect")
 def unit_selection():
@@ -97,14 +100,14 @@ def unit1():
 
 
 @app.route("/grammar")
-def unit_selection():
+def grammar():
     grammar_unit = "unit" + unit + "_grammar_" + target_language + ".html"
 
     return render_template(grammar_unit)
 
 
 @app.route("/dictionary")
-def unit_selection():
+def dictionary():
     dictionary_language = native_language + "_" + target_language + "_dictionary"
 
     return render_template(dictionary_language)
@@ -129,7 +132,7 @@ def converse():
 
 # Old typesprinter routes, for reference only
 
-
+"""
 @app.route("/1v1", methods=["GET", "POST"])
 def ml():
     try:
@@ -292,6 +295,8 @@ def rank(message):
         if message['room'] == session["room-commands"]:
             session.pop("commands")
             session.pop("room-commands")
+
+"""
 
 
 if __name__ == '__main__':
