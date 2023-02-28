@@ -85,23 +85,24 @@ def index():
     return redirect("/unitselect")
     
 
-@app.route("/unitselect")
+@app.route("/unitselect", methods=['GET', 'POST'])
 def unit_selection():
+    if request.method == 'GET':
+        return render_template("unitselect.html")
+    
+    unit = request.form.get('unit_num')
 
-    return render_template("unitselect.html")
 
-
-@app.route("/unit1")
-def unit1():
-    unit = 1
-    unit_language = "unit" + unit + "_" + target_language + ".html"
+@app.route("/unit_home", methods=['GET', 'POST'])
+def unit_home():
+    unit_language = "unit" + str(unit) + "_" + target_language + ".html"
 
     return render_template(unit_language)
 
 
 @app.route("/grammar")
 def grammar():
-    grammar_unit = "unit" + unit + "_grammar_" + target_language + ".html"
+    grammar_unit = "unit" + str(unit) + "_grammar_" + target_language + ".html"
 
     return render_template(grammar_unit)
 

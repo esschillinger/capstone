@@ -1,0 +1,389 @@
+body {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.gradient {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+    background-image: url(/static/grad_alt.png); /* Image interchangable */
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+@media only screen and (min-width: 1400px) {
+    .center-vertically {
+        margin-top: 25%;
+        width: 100%;
+        margin-left: 13%;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 1399px) {
+    .center-vertically {
+        margin-top: 18%;
+        /*margin-left: 0.1%; /* WHY DO I NEED THIS LINE FOR IT TO ACTUALLY CENTER?! */
+        width: 100%;
+        margin-left: 13%;
+        margin-right: auto;
+    }
+
+    #term {
+        width: 800px;
+    }
+
+    #canvas-terminal {
+        width: 800px;
+    }
+
+    #canvas-terminal-body {
+        width: 800px;
+    }
+}
+
+.panel {
+    width: 100%;
+    height: 60%;
+    border-radius: 3px;
+    background-color: white;
+    display: block;
+}
+
+.panel-a {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: block;
+}
+
+a.panel-a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.figure-padding {
+    padding: 5%;
+}
+
+.panel-title {
+    width: 100%;
+    height: 20%;
+    font-family: "Montserrat";
+    font-size: 14px;
+    margin: auto;
+}
+
+.panel-preview {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.image {
+     width: 90%;
+     height: 300px;
+}
+
+.panel1 {
+    background-image: url("/static/generate-animation.png");
+    background-size: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.panel1:hover {
+    background-image: url("/static/generate-animation-forever.gif"); /* animation created with Wolfram Mathematica (manipulating parametric lines)--CHANGE THIS ANIMATION TO HAVE RANDOM NEURONS IN THE FIRST LAYER FIRE AND TRIGGER DIFFERENT NEURONS IN EACH LAYER THEREAFTER */
+    background-size: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.panel2 {
+    background-image: url("/static/typesprinter-animation-resized.png");
+    background-size: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.panel2:hover {
+    background-image: url("/static/typesprinter-animation-resized.gif"); /* animation created with Wolfram Mathematica (parametric plotting 3 rotated ellipses and creating points to trace their paths) */
+    background-size: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkbox-label .checkbox-custom {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+.checkbox-label .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    top: 12px;
+    left: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #009BFF;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom {
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    top: 3px;
+    left: 8px;
+    width: 6px;
+    height: 12px;
+    border: solid #009BFF;
+    border-width: 0 2px 2px 0;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+}
+
+.float {
+    float: left;
+}
+
+.container-mini {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.form-dimens {
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.form-dimens-2 {
+    width: 30%;
+    height: 20%;
+    margin: auto;
+    margin-top: 17.5%;
+}
+
+.form-elements {
+    /*
+    margin-left: 35%;
+    margin-top: 20%;
+    */
+    width: 100%;
+}
+
+.terminal-input:focus {
+    outline: none;
+}
+
+.terminal {
+    width: 1000px;
+    margin: auto;
+    margin-top: 10%;
+    background-color: #1e2325;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.terminal-body {
+    font-size: 45px;
+    color: white;
+    background-color: black;
+}
+
+.terminal-top {
+    background-color: #354146;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.command-start {
+    margin-left: 15px;
+    margin-right: 15px;
+    float: left;
+}
+
+.command-main {
+    float: left;
+    width: 5px; /* accommodate for the caret */
+}
+
+.command-end {
+    margin-top: 10px;
+    float: left;
+}
+
+.terminal-input {
+    width: 100%;
+    color: white;
+    border-color: black;
+    background-color: black;
+}
+
+.code {
+    font-family: "Ubuntu Mono", "Adobe Blank", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    user-select: none;
+}
+
+.cheat-form {
+    float: left;
+}
+
+.friendly-font {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.response {
+    width: 60%;
+    float: left;
+    margin-left: 20%;
+    margin-top: 20%;
+    user-select: none;
+}
+
+.response-input {
+    width: 100%;
+}
+
+.wpm-counter {
+    float: left;
+    padding-left: 5%;
+    margin-top: 20%;
+    font-size: 50px;
+    color: lightgray;
+}
+
+.logo {
+    font-family: "Montserrat";
+    width: 50%;
+}
+
+#incorrect {
+    background-color: #f0a395;
+}
+
+#correct {
+    color: #99cc81;
+}
+
+nav .navbar-brand .pink
+{
+    color: #ff157e;
+}
+
+nav .navbar-brand .orange
+{
+    color: #ffa30e;
+}
+
+nav .navbar-brand .aqua
+{
+    color: #00e0ff;
+}
+
+nav .navbar-brand .blueviolet
+{
+    color: #873cff;
+}
+
+/*
+ * Nav-bar link text/styling adapted from https://openai.com/blog/better-language-models/
+ */
+.links {
+    font-family: ColfaxAI,Helvetica,sans-serif;
+    font-size: .75em;
+    letter-spacing: 0.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.race-links {
+    display: none;
+    float: right;
+    margin-top: 5%;
+}
+
+.race-link {
+    display: block;
+}
+
+.race-link:hover {
+    text-decoration: none;
+}
+
+.key {
+    display: none;
+    margin-top: 10%;
+    font-size: 15px;
+}
+
+.stats {
+    display: none;
+}
+
+.graphs {
+    margin-top: 5%;
+    float: left;
+}
+
+#fastest {
+    background-color: #3f8e68;
+}
+
+#fast {
+    background-color: #a0d58c;
+}
+
+#slow {
+    background-color: #ea7664;
+}
+
+#slowest {
+    background-color: #bc3f5c;
+}
