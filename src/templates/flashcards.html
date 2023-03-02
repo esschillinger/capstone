@@ -1,53 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Flash Cards</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/flashcards.css"/>
-    <script type="text/javascript" src="../static/js/units/{{ random_text }}"></script>
-    <script type="text/javascript" src="../static/js/units/unit2.json"></script>
-</head>
-<body>
-    <section class="container">
-        <div class="head">
-            <lable class="lable" for="units">Unit set:</lable>
-            <select class="decks" name="units" id="decks">
-                <option id="u1" value="u1">Unit 1</option>
-                <option id="u2" value="u2">Unit 2</option>
-            </select>
-        </div>
+{% extends "nav_layout.html" %}
 
-    <button type="button" class="correct next">Correct</button>
 
-    <div class="card">
-        <div class="front">
-            <section class="content">
-                <p class="question"></p>
-                <button type="button" class="check_answer">Go to back</button>
-            </section>
-        </div>
-        <div class="back">
-                <section class="content">
-                    <p class="solution">...</p>
-                    <button class="return">Go to front</button>
-                    <button type="button" class="new_word">new card</button>
-                </section>
-        </div>
+
+{% block head %}
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Flash Cards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/flashcards.css"/>
+<script type="text/javascript" src="../static/js/units/{{ random_text }}"></script>
+<script type="text/javascript" src="../static/js/units/unit2.json"></script>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<section class="container">
+    <div class="head">
+        <lable class="lable" for="units">Unit set:</lable>
+        <select class="decks" name="units" id="decks">
+            <option id="u1" value="u1">Unit 1</option>
+            <option id="u2" value="u2">Unit 2</option>
+        </select>
     </div>
 
-    <button type="button" class="wrong next">Incorrect</button>
+<button type="button" class="correct next">Correct</button>
 
-    <h4 id="known">Total Correct:</h4>
-    <h3 class="remaining"></h3>
-    <h4 id="next">Total Incorrect:</h4>
-    <button type="button" class="reload">Restart</button>
+<div class="card">
+    <div class="front">
+        <section class="content">
+            <p class="question"></p>
+            <button type="button" class="check_answer">Go to back</button>
+        </section>
+    </div>
+    <div class="back">
+            <section class="content">
+                <p class="solution">...</p>
+                <button class="return">Go to front</button>
+                <button type="button" class="new_word">new card</button>
+            </section>
+    </div>
+</div>
 
-    </section>
+<button type="button" class="wrong next">Incorrect</button>
 
-    <p style="display: none;"> {{ random_text }}</p>
+<h4 id="known">Total Correct:</h4>
+<h3 class="remaining"></h3>
+<h4 id="next">Total Incorrect:</h4>
+<button type="button" class="reload">Restart</button>
 
-    <script src="../static/js/flashcards.js"></script>
-</body>
-</html>
+</section>
+
+<script src="../static/js/flashcards.js"></script>
+
+{% endblock%}
