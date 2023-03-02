@@ -3,7 +3,6 @@ import os.path
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.storage import SQLStorageAdapter
-from nltk.corpus import brown
 
 # Define the filename for the saved ChatBot
 BOT_FILENAME = 'saved_bot.json'
@@ -20,28 +19,31 @@ else:
         storage_adapter='chatterbot.storage.SQLStorageAdapter',
     )
 
-    # Create a new trainer and train the bot on the Brown corpus from NLTK
-    trainer = ListTrainer(bot)
-    trainer.train(' '.join([' '.join(sentence) for sentence in brown.sents()]))
+    # Define the training data
+    training_data = [
+        'Hi',
+        'Hello',
+        'What is your name?',
+        'My name is Chatbot',
+        'What can you do?',
+        'I can help you with tasks or answer questions',
+        'How are you?',
+        'I am doing well, thank you for asking',
+        'Goodbye',
+        'Goodbye, have a nice day!'
+    ]
 
-    #trainer = ListTrainer(bot)
-    #trainer.train(['Hello, how are you doing today? I am doing well, thank you for asking.', 
-                  # 'What is your favorite color? Mine is blue.', 
-                   #'What do you like to do in your free time?', 
-                   #'Do you have any pets? I have a cat named Fluffy.', 
-     #              'What is your favorite food?', 
-           #        'Do you have any siblings?', 
-          #         'What is the weather like today?', 
-         #          'How old are you?', 
-        #           'What is your favorite book?', 
-     #              'What is your favorite movie?', 
-      #             'What is your favorite song?', 
-       #            'Do you like to travel?', 
-        #           'What is your favorite place to visit?', 
-         #          'What is your favorite hobby?'])
+    # Create a new trainer and train the bot on the training data
+    trainer = ListTrainer(bot)
+    trainer.train(training_data)
 
     # Get the bot's data and save it to a JSON file
+
+
+    #ESTABLISH SETTING BELOW
     bot_data = bot.get_response('Hello').serialize()
+
+    # Convert the datetime object to a string and save the bot's data
     bot_data['created_at'] = bot_data['created_at'].isoformat() # convert datetime to string
     with open(BOT_FILENAME, 'w') as f:
         json.dump(bot_data, f)
@@ -75,6 +77,6 @@ def main():
             break
 
 
-# Run the chatbot
+# Run the main function
 if __name__ == '__main__':
     main()
