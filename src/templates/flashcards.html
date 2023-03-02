@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Flash Cards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script type="text/javascript" src="./units/unit1.json"></script>   
-    <script type="text/javascript" src="./units/unit2.json"></script>   
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/flashcards.css"/>
+    <script type="text/javascript" src="../static/js/units/{{ random_text }}"></script>
+    <script type="text/javascript" src="../static/js/units/unit2.json"></script>
 </head>
 <body>
     <section class="container">
@@ -46,6 +46,8 @@
 
     </section>
 
-    <script src="main.js"></script>
+    <p style="display: none;"> {{ random_text }}</p>
+
+    <script src="../static/js/flashcards.js"></script>
 </body>
 </html>

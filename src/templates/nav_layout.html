@@ -1,31 +1,34 @@
-{% extends "layout.html" %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/skeleton.css"> <!-- minimal CSS framework, makes inputs look pretty -->
+    <link rel="icon" href="">
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-{% block title %}
+    <title>Triolingo{% block title %}{% endblock %}</title>
 
-{% endblock %}
+    {% block head %}
 
+    {% endblock %}
 
-{% block head %}
-{% endblock %}
+  </head>
+  <body>
 
+    <ul>
+        <li><a href="">View All Units</a></li>
+        <li><a href="">Dictionary</a></li>
+        <li><a href="">Vocab</a></li>
+        <li><a href="">Grammar</a></li>
+        <li><a href="/cards">Flash Cards</a></li>
+        <li><a href="">Converse</a></li>
+    </ul>
+  
+    {% block body %}
 
-{% block body %}
+    {% endblock %}
 
-<!-- preferably make the styling for this all caps -->
-
-<ul>
-    <li><a href="">View All Units</a></li>
-    <li><a href="">Dictionary</a></li>
-    <li><a href="">Vocab</a></li>
-    <li><a href="">Grammar</a></li>
-    <li><a href="">Flash Cards</a></li>
-    <li><a href="">Converse</a></li>
-</ul>
-
-{% block body2 %}
-
-{% endblock %}
-
-
-{% endblock %}
+  </body>
+</html>

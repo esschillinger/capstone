@@ -14,7 +14,8 @@ from enum import Enum
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-app.config['SECRET_KEY'] = 'secret!'
+# app.config['SECRET_KEY'] = 'secret!'
+app.secret_key = 'bruh'
 
 socketio = SocketIO(app)
 
@@ -66,11 +67,15 @@ General app structure in mind:
 
 """
 
-# Global vars
+# Session vars
 
-native_language = "english"
-target_language = "english"
-unit = 0
+# native_language
+# target_language
+# unit
+
+
+# Global Vars
+
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -79,8 +84,8 @@ def index():
         return render_template('index.html')
     # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
 
-    native_language = request.form.get('native_language')
-    target_language = request.form.get('target_language')
+    session['native_language'] = request.form.get('native_language')
+    session['target_language'] = request.form.get('target_language')
 
     return redirect("/unitselect")
     
@@ -90,35 +95,46 @@ def unit_selection():
     if request.method == 'GET':
         return render_template("unitselect.html")
     
-    unit = request.form.get('unit_num')
+    session['unit'] = request.form.get('unit_num')
 
 
-@app.route("/unit_home", methods=['GET', 'POST'])
-def unit_home():
-    unit_language = "unit" + str(unit) + "_" + target_language + ".html"
+@app.route("/unit1", methods=['GET', 'POST'])
+def unit1():
+    session['unit'] = 1
+    unit_language = "unit1_" + session['target_language'] + ".html"
+
+    return render_template(unit_language)
+
+
+@app.route("/unit2", methods=['GET', 'POST'])
+def unit2():
+    session['unit'] = 2
+    unit_language = "unit2_" + session['target_language'] + ".html"
 
     return render_template(unit_language)
 
 
 @app.route("/grammar")
 def grammar():
-    grammar_unit = "unit" + str(unit) + "_grammar_" + target_language + ".html"
+    grammar_unit = "unit" + str(session['unit']) + "_grammar_" + session['target_language'] + ".html"
 
     return render_template(grammar_unit)
 
 
 @app.route("/dictionary")
 def dictionary():
-    dictionary_language = native_language + "_" + target_language + "_dictionary"
+    dictionary_language = session['native_language'] + "_" + session['target_language'] + "_dictionary.html"
 
     return render_template(dictionary_language)
 
 
 @app.route("/cards")
 def flash_cards():
-    vocab_list = get_vocab_list(unit, native_language, target_language) # function to be defined in helpers.py
+    # vocab_list = get_vocab_list(session['unit'], session['native_language'], session['target_language']) # function to be defined in helpers.py
 
-    return render_template("flashcards.html", vocab_list=vocab_list)
+    # return render_template("flashcards.html", vocab_list=vocab_list)
+    random_text = "unit" + str(session['unit']) + ".json"
+    return render_template("flashcards.html", random_text=random_text)
 
 
 @app.route("/converse")
