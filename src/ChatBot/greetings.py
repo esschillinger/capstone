@@ -1,5 +1,5 @@
-import json
 import os.path
+import json
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.storage import SQLStorageAdapter
@@ -19,38 +19,18 @@ else:
         storage_adapter='chatterbot.storage.SQLStorageAdapter',
     )
 
-    # Define the training data
-    training_data = [
-        'Hi',
-        'Hello',
-        'What is your name?',
-        'My name is Chatbot',
-        'What can you do?',
-        'I can help you with tasks or answer questions',
-        'How are you?',
-        'I am doing well, thank you for asking',
-        'Goodbye',
-        'Goodbye, have a nice day!'
-    ]
+    # Read the training data from the "human_chat.txt" file
+    with open('human_chat.txt', 'r', encoding='utf-8') as f:
+        training_data = f.read().splitlines()
 
-    # Create a new trainer and train the bot on the training data
+
+    # Train the bot on the training data
     trainer = ListTrainer(bot)
     trainer.train(training_data)
 
-    # Get the bot's data and save it to a JSON file
-
-
-    #ESTABLISH SETTING BELOW
-    bot_data = bot.get_response('Hello').serialize()
-
-    # Convert the datetime object to a string and save the bot's data
-    bot_data['created_at'] = bot_data['created_at'].isoformat() # convert datetime to string
-    with open(BOT_FILENAME, 'w') as f:
-        json.dump(bot_data, f)
-
 # Define a function to greet the user
 def greet():
-    print("Hello! My name is Chatbot. What can I help you with today?")
+    print("Hello! My name is Chatbot. I have been trained on human_chat.txt. What can I help you with today?")
 
 # Define a main function to run the chatbot
 def main():
@@ -70,6 +50,10 @@ def main():
             # Get the bot's response
             bot_response = bot.get_response(user_input)
 
+            #parse the bots response to remove all refremces to the "Human 1:" or "Human 2:" tags
+            bot_response = str(bot_response).replace("Human 1: ", "")
+            bot_response = str(bot_response).replace("Human 2: ", "")
+
             # Print the bot's response
             print(bot_response)
 
@@ -80,3 +64,4 @@ def main():
 # Run the main function
 if __name__ == '__main__':
     main()
+
