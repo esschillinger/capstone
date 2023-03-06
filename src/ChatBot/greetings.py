@@ -3,6 +3,8 @@ import json
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.storage import SQLStorageAdapter
+from chatterbot.search import IndexedTextSearch
+
 
 # Define the filename for the saved ChatBot
 BOT_FILENAME = 'saved_bot.json'
@@ -17,12 +19,24 @@ else:
     bot = ChatBot(
         'MyChatBot',
         storage_adapter='chatterbot.storage.SQLStorageAdapter',
+        logic_adapters=[
+            'chatterbot.logic.BestMatch'
+        ],
+        input_adapter='chatterbot.input.TerminalAdapter',
+        output_adapter='chatterbot.output.TerminalAdapter',
+        database_uri=None,
+        read_only=True,
+        preprocessors=[
+            'chatterbot.preprocessors.clean_whitespace'
+        ],
+        statement_comparison_function=chatterbot.comparisons.levenshtein_distance,
+        statement_comparison_threshold=0.6,
+        response_selection_method='chatterbot.response_selection.get_random_response'
     )
 
     # Read the training data from the "human_chat.txt" file
     with open('human_chat.txt', 'r', encoding='utf-8') as f:
         training_data = f.read().splitlines()
-
 
     # Train the bot on the training data
     trainer = ListTrainer(bot)
@@ -47,18 +61,29 @@ def main():
             if not user_input:
                 continue  # Skip to the next iteration of the loop
 
+            if user_input == "exit":
+                break
+
             # Get the bot's response
             bot_response = bot.get_response(user_input)
 
-            #parse the bots response to remove all refremces to the "Human 1:" or "Human 2:" tags
+            #parse the bots response to remove all references to the "Human 1:" or "Human 2:" tags
             bot_response = str(bot_response).replace("Human 1: ", "")
             bot_response = str(bot_response).replace("Human 2: ", "")
 
             # Print the bot's response
             print(bot_response)
 
+        # Handle user saying exit and keyboard interrupts
         except (KeyboardInterrupt, EOFError, SystemExit):
             break
+
+    # Save the trained bot to a file
+    with open(BOT_FILENAME, 'w') as f:
+        bot_dict = bot.__dict__
+        # Remove the IndexedTextSearch object from the dictionary
+        bot_dict.pop('search_algorithm', None)
+        json.dump(bot_dict, f, default=str)
 
 
 # Run the main function
