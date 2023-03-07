@@ -39,7 +39,7 @@ else:
 
 # Define a function to greet the user
 def greet():
-    print("Hello! My name is Chatbot. I have been trained on human_chat.txt. What can I help you with today?")
+    print("Hello! I am here to help you learn about the weather.")
 
 # Define a main function to run the chatbot
 def main():
