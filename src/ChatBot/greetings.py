@@ -4,34 +4,28 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.storage import SQLStorageAdapter
 from chatterbot.search import IndexedTextSearch
+import chatterbot.comparisons
+import chatterbot.response_selection
 
 
 # Define the filename for the saved ChatBot
 BOT_FILENAME = 'saved_bot.json'
 
 # Check if a saved ChatBot exists
-if os.path.isfile(BOT_FILENAME) and os.path.getsize(BOT_FILENAME) > 0:
+if os.path.isfile(BOT_FILENAME):
+    # Load the saved ChatBot
     with open(BOT_FILENAME, 'r') as f:
-        bot_data = json.load(f)
-        bot = ChatBot('MyChatBot', **bot_data)
+        bot_dict = json.load(f)
+        
+        #load the bot
+        bot = ChatBot(BOT_FILENAME)
+
+
 else:
     # Create a new ChatBot instance with a SQLStorageAdapter
     bot = ChatBot(
         'MyChatBot',
-        storage_adapter='chatterbot.storage.SQLStorageAdapter',
-        logic_adapters=[
-            'chatterbot.logic.BestMatch'
-        ],
-        input_adapter='chatterbot.input.TerminalAdapter',
-        output_adapter='chatterbot.output.TerminalAdapter',
-        database_uri=None,
-        read_only=True,
-        preprocessors=[
-            'chatterbot.preprocessors.clean_whitespace'
-        ],
-        statement_comparison_function=chatterbot.comparisons.levenshtein_distance,
-        statement_comparison_threshold=0.6,
-        response_selection_method='chatterbot.response_selection.get_random_response'
+        storage_adapter='chatterbot.storage.SQLStorageAdapter'
     )
 
     # Read the training data from the "human_chat.txt" file
@@ -41,6 +35,7 @@ else:
     # Train the bot on the training data
     trainer = ListTrainer(bot)
     trainer.train(training_data)
+    print("Training complete!")
 
 # Define a function to greet the user
 def greet():
@@ -83,6 +78,7 @@ def main():
         bot_dict = bot.__dict__
         # Remove the IndexedTextSearch object from the dictionary
         bot_dict.pop('search_algorithm', None)
+        bot_dict['name'] = bot.name
         json.dump(bot_dict, f, default=str)
 
 

@@ -1,1 +1,1 @@
-{}
+{"name": "saved_bot.json", "search_algorithms": {"indexed_text_search": "<chatterbot.search.IndexedTextSearch object at 0x000001B61706F970>"}, "logic_adapters": ["<chatterbot.logic.best_match.BestMatch object at 0x000001B6189697F0>"], "storage": "<chatterbot.storage.sql_storage.SQLStorageAdapter object at 0x000001B6170D31C0>", "preprocessors": ["<function clean_whitespace at 0x000001B618971700>"], "logger": "<Logger chatterbot.chatterbot (WARNING)>", "read_only": false}
