@@ -25,7 +25,7 @@ body {
 
 @media only screen and (min-width: 1400px) {
     .center-vertically {
-        margin-top: 25%;
+        margin-top: 10%;
         width: 100%;
         margin-left: 13%;
         margin-right: auto;
@@ -52,6 +52,10 @@ body {
     #canvas-terminal-body {
         width: 800px;
     }
+}
+
+.row-n {
+    margin-top: -5%;
 }
 
 .panel {
@@ -87,40 +91,62 @@ a.panel-a:hover {
 }
 
 .panel-preview {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
     margin-left: 10%;
     margin-top: 10%;
 }
 
 .image {
-     width: 90%;
-     height: 300px;
+     width: 100%;
+     height: 200px;
+     margin-left: 5%;
 }
 
-.panel1 {
-    background-image: url("/static/img/english-greetings.jpg");
+.panel-transition {
+    transition: width 0.5s, height 0.5s;
+}
+
+.panel-transition:hover {
+    width: 105%;
+    height: 180px;
+}
+
+.panel-img-properties {
     background-size: 90% 50%;
     background-repeat: no-repeat;
+    display: flex;
+}
+
+/*
+ *  PANEL DISTINCTIONS ALLOW FOR ANIMATED IMAGES ON HOVER
+ *  Note that these would have to be images created and animated by hand
+ *  See typesprinter for examples
+*/
+
+.panel1 {
+    background-image: url("/static/img/greetings.jpg");
 }
 
 .panel1:hover {
-    background-image: url(""); /* animation created with Wolfram Mathematica (manipulating parametric lines)--CHANGE THIS ANIMATION TO HAVE RANDOM NEURONS IN THE FIRST LAYER FIRE AND TRIGGER DIFFERENT NEURONS IN EACH LAYER THEREAFTER */
-    background-size: 90% 50%;
-    background-repeat: no-repeat;
+    background-image: url("/static/img/greetings.jpg");
 }
 
 .panel2 {
-    background-image: url("");
-    background-size: 90% 50%;
-    background-repeat: no-repeat;
+    background-image: url("/static/img/restaurant.jpg");
 }
 
 .panel2:hover {
-    background-image: url(""); /* animation created with Wolfram Mathematica (parametric plotting 3 rotated ellipses and creating points to trace their paths) */
-    background-size: 90% 50%;
-    background-repeat: no-repeat;
+    background-image: url("/static/img/restaurant.jpg");
+}
+
+.panel3 {
+    background-image: url("/static/img/weather.jpg");
+}
+
+.panel3:hover {
+    background-image: url("/static/img/weather.jpg");
 }
 
 .checkbox-label input {

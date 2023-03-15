@@ -72,6 +72,7 @@ General app structure in mind:
 # native_language
 # target_language
 # unit
+# unit_names
 
 
 # Global Vars
@@ -80,6 +81,13 @@ General app structure in mind:
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
+    session['unit_names'] = [
+        'Greetings',
+        'Restaurant',
+        'Weather',
+        'Doctor\'s Office'
+    ]
+
     if request.method == 'GET':
         return render_template('index.html')
     # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
@@ -137,11 +145,11 @@ def flash_cards():
     return render_template("flashcards.html", random_text=random_text)
 
 
-@app.route("/converse")
+@app.route("/chat")
 def converse():
     # load unit-specific chat bot
 
-    return render_template("converse.html")
+    return render_template("chat.html")
 
 
 
