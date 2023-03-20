@@ -142,11 +142,19 @@ a.panel-a:hover {
 }
 
 .panel3 {
-    background-image: url("/static/img/weather.jpg");
+    background-image: url("/static/img/weather1.PNG");
 }
 
 .panel3:hover {
-    background-image: url("/static/img/weather.jpg");
+    background-image: url("/static/img/weather2.PNG");
+}
+
+.panel4 {
+    background-image: url("/static/img/doctor.jfif");
+}
+
+.panel4:hover {
+    background-image: url("/static/img/doctor.jfif");
 }
 
 .checkbox-label input {
