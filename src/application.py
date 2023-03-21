@@ -110,6 +110,7 @@ def unit_selection():
 def unit1():
     session['unit'] = 1
     unit_language = "unit1_" + session['target_language'] + ".html"
+    print(unit_language)
 
     return render_template(unit_language)
 
