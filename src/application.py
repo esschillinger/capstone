@@ -77,17 +77,20 @@ General app structure in mind:
 
 # Global Vars
 
+unit_names = {
+    'english' : ['Greetings', 'Restaurant', 'Weather', 'Doctor\'s Office'],
+    'russian' : ['Приветствия', 'В Ресторане', 'Погода', 'Офис Врача']
+}
+
+nav_tabs = {
+    'english' : ['All Units', 'Dictionary', 'Vocab', 'Grammar', 'Flash Cards', 'Converse'],
+    'russian' : ['Все Урокы', 'Словарь', 'Словарный Запас', 'Грамматика', 'Флешки', 'Говирить']
+}
+
 
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    session['unit_names'] = [
-        'Greetings',
-        'Restaurant',
-        'Weather',
-        'Doctor\'s Office'
-    ]
-
     if request.method == 'GET':
         return render_template('index.html')
     # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
@@ -95,13 +98,16 @@ def index():
     session['native_language'] = request.form.get('native_language')
     session['target_language'] = request.form.get('target_language')
 
+    session['unit_names'] = unit_names[session['native_language']]
+    session['nav_tabs'] = nav_tabs[session['native_language']]
+
     return redirect("/unitselect")
     
 
 @app.route("/unitselect", methods=['GET', 'POST'])
 def unit_selection():
     if request.method == 'GET':
-        return render_template("unitselect.html")
+        return render_template("unitselect.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
     
     session['unit'] = request.form.get('unit_num')
 
@@ -112,7 +118,7 @@ def unit1():
     unit_language = "unit1_" + session['target_language'] + ".html"
     print(unit_language)
 
-    return render_template(unit_language)
+    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/unit2", methods=['GET', 'POST'])
@@ -120,37 +126,35 @@ def unit2():
     session['unit'] = 2
     unit_language = "unit2_" + session['target_language'] + ".html"
 
-    return render_template(unit_language)
+    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/grammar")
 def grammar():
     grammar_unit = "unit" + str(session['unit']) + "_grammar_" + session['target_language'] + ".html"
 
-    return render_template(grammar_unit)
+    return render_template(grammar_unit, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/dictionary")
 def dictionary():
     dictionary_language = session['native_language'] + "_" + session['target_language'] + "_dictionary.html"
 
-    return render_template(dictionary_language)
+    return render_template(dictionary_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/cards")
 def flash_cards():
-    # vocab_list = get_vocab_list(session['unit'], session['native_language'], session['target_language']) # function to be defined in helpers.py
-
-    # return render_template("flashcards.html", vocab_list=vocab_list)
     random_text = "unit" + str(session['unit']) + ".json"
-    return render_template("flashcards.html", random_text=random_text)
+
+    return render_template("flashcards.html", random_text=random_text, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/chat")
 def converse():
     # load unit-specific chat bot
 
-    return render_template("chat.html")
+    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 
@@ -159,45 +163,6 @@ def converse():
 # Old typesprinter routes, for reference only
 
 """
-@app.route("/1v1", methods=["GET", "POST"])
-def ml():
-    try:
-        commands = session["commands"]
-        room = session["room-commands"]
-    except:
-        commands = ""
-        room = ""
-
-    if "p best" in commands:
-        session["passage"] = BEST_PASSAGE
-
-    try:
-        passage = session["passage"] # Accounts for "generate" passage as well
-    except:
-        passage = pick_passage()
-
-    if request.method == "GET":
-        return render_template("1v1.html", passage=passage, commands=commands, room=room)
-
-
-@app.route("/practice")
-def practice():
-    # session.pop("commands", None)
-    try:
-        passage = session['passage']
-    except:
-        passage = pick_passage()
-
-    return render_template("practice.html", passage=passage)
-
-
-@app.route("/again")
-def again():
-    # session.pop("commands", None)
-
-    return render_template("practice.html", passage=pick_passage())
-
-
 @app.route("/verify", methods=["GET", "POST"])
 def login():
     session.clear()
@@ -230,33 +195,6 @@ def race():
         session["commands"] = commands
 
     return redirect("/1v1")
-
-
-@app.route("/generate", methods=["GET", "POST"])
-def generate():
-
-    if request.method == "GET":
-        return render_template("generate.html")
-
-    '''
-    condition = request.form.get("first_word")
-    passage = generate_passage(condition)
-    '''
-
-    p = find_passage(request.form.get("first_word"), request.form.get("exact"))
-    error = "Query unsuccessful--try using a different term"
-
-    if p == "<NO-URLS>":
-        return apology(error + ".") # IMPLEMENT APOLOGY TO NOTIFY USER THAT QUERY WAS UNSUCCESSFUL
-    elif p == "<NO-PASSAGES>":
-        return apology(error + " OR uncheck the 'strictly-require' box.")
-
-    session["passage"] = p
-
-    if bool(request.form.get("join_room")) == True:
-        return redirect("/1v1")
-    else:
-        return redirect("/practice")
 
 
 @socketio.on('join', namespace='/test')

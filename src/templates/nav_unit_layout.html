@@ -1,86 +1,95 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    
-    <!--
-    
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="/static/css/skeleton.css"> <!-- minimal CSS framework, makes inputs look pretty -->
+	  <head>
+		    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="icon" href="">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <link rel="icon" href="">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <title>Triolingo{% block title %}{% endblock %}</title>
-
-    {% block head %}
-
-    {% endblock %}
-
-  </head>
-  <body>
+        <title>Triolingo{% block title %}{% endblock %}</title>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-        {{ session['unit_names'][session['unit'] - 1] }}
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              All Units
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/unit1">Unit 1: Greetings</a>
-              <a class="dropdown-item" href="/unit2">Unit 2: Restaurant</a>
-              <a class="dropdown-item" href="/unit3">Unit 3: Weather</a>
-              
-              
-              <!--
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/">Home</a>
-              -->
+        {% block head %}
 
+        {% endblock %}
 
+	  </head>
+	  <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <!-- <ul class="nav navbar-nav navbar-left">
+                      <li><a href="#">Left Link</a></li>
+                    </ul> -->
+                    <ul class="nav navbar-nav text-center">
+                        <li>
+                            <a href="/">Clickable logo here</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">
+                                {{ nav_tabs[0] }}
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/unit1">
+                                        {{ unit_names[0] }}
+                                    </a>
+                                </li>
+                                <li><a href="/unit2">
+                                    {{ unit_names[1] }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/unit3">
+                                        {{ unit_names[2] }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/unit4">
+                                        {{ unit_names[3] }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">
+                                {{ nav_tabs[1] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                {{ nav_tabs[2] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                {{ nav_tabs[3] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cards">
+                                {{ nav_tabs[4] }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/chat">
+                                {{ nav_tabs[5] }}
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Right Link</a></li>
+                    </ul> -->
+                </div>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Dictionary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Vocab</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Grammar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cards">Flash Cards</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/chat">Converse</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    
+		    </nav>
+	
+        {% block body %}
+        {% endblock %}
 
-  
-    {% block body %}
-
-    {% endblock %}
-
-  </body>
+	  </body>
 </html>

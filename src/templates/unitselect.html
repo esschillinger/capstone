@@ -7,120 +7,63 @@
 
 
 {% block head %}
+
+<link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
 {% endblock %}
 
 
 {% block body %}
 
-<div class="gradient header">
-  <div class="container">
-  <div class="row center-vertically">
-
-    <div class="col-12 col-sm-6 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-      <figure class="panel panel-transition shadow-lg">
-          <a href="/unit1" class="panel-a">
-          <div class="figure-padding">
-            <div class="panel-title">
-              <b>Unit 1: Greetings</b>
-            </div>
-            <div class="panel-preview panel1 panel-img-properties image">
-
-            </div>
-          </div>
-        </a>
-        </figure>
+<div class="container">
+    <h1>Maybe put some introductory clause here or a different navbar than the one used inside the units, also remove underlining on hover</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/unit1" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[0] }}</h3>
+                    </div>
+                    <div class="panel-image panel1"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit2" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[1] }}</h3>
+                    </div>
+                    <div class="panel-image panel2"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit3" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[2] }}</h3>
+                    </div>
+                    <div class="panel-image panel3"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit4" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[3] }}</h3>
+                    </div>
+                    <div class="panel-image panel4"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
     </div>
-
-    <div class="col-12 col-sm-6 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-      <figure class="panel panel-transition shadow-lg">
-          <a href="/unit2" class="panel-a">
-          <div class="figure-padding">
-            <div class="panel-title">
-              <b>Unit 2: Restaurant</b>
-            </div>
-            <div class="panel-preview panel2 panel-img-properties image">
-
-            </div>
-          </div>
-        </a>
-        </figure>
-    </div>
-
-    <div class="col-12 col-sm-6 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-      <figure class="panel panel-transition shadow-lg">
-          <a href="/unit3" class="panel-a">
-          <div class="figure-padding">
-            <div class="panel-title">
-              <b>Unit 3: Weather</b>
-            </div>
-            <div class="panel-preview panel3 panel-img-properties image">
-
-            </div>
-          </div>
-        </a>
-        </figure>
-    </div>
-
-    </div>
-
-
-
-
-
-
-    <div class="row center-vertically row-n">
-
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-        <a href="/unit4" class="panel-a">
-          <figure class="panel panel-transition shadow-lg">
-            <div class="figure-padding">
-              <div class="panel-title">
-                <b>Unit 4: Doctor's Office</b>
-              </div>
-              <div class="panel-preview panel4 panel-img-properties image">
-  
-              </div>
-            </div>
-          </figure>
-        </a>
-      </div>
-  
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-        <a href="/unit5" class="panel-a">
-          <figure class="panel panel-transition shadow-lg">
-            <div class="figure-padding">
-              <div class="panel-title">
-                <b>Unit 5: TBD</b>
-              </div>
-              <div class="panel-preview panel5 panel-img-properties image">
-  
-              </div>
-            </div>
-          </figure>
-        </a>
-      </div>
-  
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3"> <!-- col-12 col-sm-6 col-md-4 col-xl-3 OR col-5 col-sm-5 col-md-5 col-xl-4 -->
-        <a href="/unit6" class="panel-a">
-          <figure class="panel panel-transition shadow-lg">
-            <div class="figure-padding">
-              <div class="panel-title">
-                <b>Unit 6: TBD</b>
-              </div>
-              <div class="panel-preview panel6 panel-img-properties image">
-  
-              </div>
-            </div>
-          </figure>
-        </a>
-      </div>
-  
-      </div>
-  </div>
 </div>
-
-{% block tabs %}
-{% endblock %}
-
-
+  
 {% endblock %}

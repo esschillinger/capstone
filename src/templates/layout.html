@@ -1,25 +1,27 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="/static/css/skeleton.css"> <!-- minimal CSS framework, makes inputs look pretty -->
-    <link rel="icon" href="">
+    <head>
+    
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="icon" href="">
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <title>Triolingo{% block title %}{% endblock %}</title>
 
-    <title>Triolingo{% block title %}{% endblock %}</title>
+        {% block head %}
 
-    {% block head %}
+        {% endblock %}
 
-    {% endblock %}
-
-  </head>
-  <body>
+    </head>
+    <body>
   
-    {% block body %}
+        {% block body %}
 
-    {% endblock %}
+        {% endblock %}
 
-  </body>
+    </body>
 </html>

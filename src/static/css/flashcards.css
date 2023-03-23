@@ -20,7 +20,7 @@ th {
     white-space: nowrap;
 }
 
-.container {
+.container-cards {
     display: grid;
     justify-items: center;
     grid-template-columns: 15% 70% 15%;

@@ -1,4 +1,5 @@
 body {
+    font-family: 'Lato', sans-serif;
     background-color: #FFFFFF;
     width: 100%;
     height: 100%;
@@ -59,11 +60,40 @@ body {
 }
 
 .panel {
-    width: 100%;
-    height: 60%;
-    border-radius: 3px;
-    background-color: white;
-    display: block;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.panel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.panel-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    color: #333333;
+}
+
+.panel-title:hover {
+    text-decoration: none;
+}
+
+.panel-image {
+    width: 85%;
+    height: 150px;
+    margin: auto;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+.panel:hover .panel-image {
+    transform: scale(1.05);
 }
 
 .panel-a {
@@ -80,14 +110,6 @@ a.panel-a:hover {
 
 .figure-padding {
     padding: 5%;
-}
-
-.panel-title {
-    width: 100%;
-    height: 20%;
-    font-family: "Montserrat";
-    font-size: 14px;
-    margin: auto;
 }
 
 .panel-preview {
@@ -157,6 +179,8 @@ a.panel-a:hover {
     background-image: url("/static/img/doctor.jfif");
 }
 
+/*
+
 .checkbox-label input {
     position: absolute;
     opacity: 0;
@@ -214,75 +238,14 @@ a.panel-a:hover {
     opacity: 1;
 }
 
-.float {
-    float: left;
+*/
+
+.incorrect {
+    background-color: #ce523c;
 }
 
-.container-mini {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.form-dimens {
-    width: 20%;
-    height: 20%;
-    margin: auto;
-    margin-top: 20%;
-}
-
-.form-dimens-2 {
-    width: 30%;
-    height: 20%;
-    margin: auto;
-    margin-top: 17.5%;
-}
-
-.form-elements {
-    /*
-    margin-left: 35%;
-    margin-top: 20%;
-    */
-    width: 100%;
-}
-
-.friendly-font {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-}
-
-.response {
-    width: 60%;
-    float: left;
-    margin-left: 20%;
-    margin-top: 20%;
-    user-select: none;
-}
-
-.response-input {
-    width: 100%;
-}
-
-.wpm-counter {
-    float: left;
-    padding-left: 5%;
-    margin-top: 20%;
-    font-size: 50px;
-    color: lightgray;
-}
-
-.logo {
-    font-family: "Montserrat";
-    width: 50%;
-}
-
-#incorrect {
-    background-color: #f0a395;
-}
-
-#correct {
-    color: #99cc81;
+.correct {
+    color: #7cc35b;
 }
 
 nav .navbar-brand .pink
@@ -305,29 +268,88 @@ nav .navbar-brand .blueviolet
     color: #873cff;
 }
 
-/*
- * Nav-bar link text/styling adapted from https://openai.com/blog/better-language-models/
- */
-.links {
-    font-family: ColfaxAI,Helvetica,sans-serif;
-    font-size: .75em;
-    letter-spacing: 0.25em;
+.navbar {
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 0;
+    margin-bottom: 0;
+    min-height: 60px;
+    font-size: 16px;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-left: auto;
-    margin-right: 0px;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.race-links {
-    display: none;
-    float: right;
-    margin-top: 5%;
+.navbar-brand {
+    padding: 0;
 }
-
-.race-link {
+.navbar-brand img {
     display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-size: 24px;
+}
+.navbar-left {
+    float: left !important;
+    margin: auto;
+}
+.navbar-right li {
+    padding: 0 20px;
+}
+.navbar-right li:last-child {
+    padding-right: 0;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #333;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    background-color: transparent;
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    background-color: #333;
+    color: #fff;
+}
+.navbar-nav {
+    margin: 0 auto;
+    display: flex;
+    table-layout: fixed;
+    float: none !important;
+    justify-content: center;
+    align-items: center;
 }
 
-.race-link:hover {
-    text-decoration: none;
+.navbar-right {
+    float: right !important;
+}
+
+.container-chat {
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.text {
+    max-width: 40%;
+    margin: 1.5%;
+    padding: 1.5%;
+    display: block;
+    color: white;
+    background-color: #0b74e4;
+    border-radius: 5px;
+}
+
+.text.user {
+    margin-left: 58%;
+    color: black;
+    background-color: #f4eeee;
 }
