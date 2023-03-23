@@ -32,6 +32,8 @@ else:
     with open('human_chat.txt', 'r', encoding='utf-8') as f:
         training_data = f.read().splitlines()
 
+    #Train with many data sources
+
     # Train the bot on the training data
     trainer = ListTrainer(bot)
     trainer.train(training_data)
