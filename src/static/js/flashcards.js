@@ -1,5 +1,5 @@
 // import json, first is default
-const unitsJSON = [u1, u2];
+const unitsJSON = [u];
 
 // Card Elem
 let card = document.querySelector(".card")
@@ -16,10 +16,7 @@ let reloadBUTTON = document.querySelector(".reload");
 let returnBUTTON = document.querySelector(".return");
 
 // unitlist
-const cardDeckOptions = [
-    "u1",
-    "u2",
-];
+const cardDeckOptions = ["u"];
 
 // Text below the Cards
 let remainingCards = document.querySelector(".remaining");
@@ -38,14 +35,7 @@ function defineQuestionSet(set) {
 
 
 let lastDeckIDX = 0;
-let deckOptions = document.querySelector("#decks");
-deckOptions.addEventListener("change", (e) => {
-    let selectedDeck = deckOptions.value;
-    let lastDeckIDX = cardDeckOptions.indexOf(selectedDeck);
-
-    defineQuestionSet(unitsJSON[lastDeckIDX]);
-    newCard();
-    });
+defineQuestionSet(unitsJSON[lastDeckIDX]);
 
 // flip Card back to front
 returnBUTTON.addEventListener("click", () => card.classList.remove("flipped"));
@@ -137,13 +127,13 @@ function removeCardFromSet(correct) {
     if (questionSet.length > 0 || nextRound.length > 0) newCard();
 }
 
-// attache the show-result function to the button on frontside of card
+// attach the show-result function to the button on frontside of card
 checkAnswerBUTTON.addEventListener("click", flipBackAndDisplayAnswer);
 
-// attache newWord-function to button on backside of card
+// attach newWord-function to button on backside of card
 newWordBUTTON.addEventListener("click", newCard);
 
-// attache functionality "newCard" to wrong-button
+// attach functionality "newCard" to wrong-button
 wrongBUTTON.addEventListener("click", () => {
     removeCardFromSet(false);
 });

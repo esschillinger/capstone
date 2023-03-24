@@ -9,9 +9,8 @@
 <title>Flash Cards</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="screen" href="../static/css/flashcards.css"/>
-<script type="text/javascript" src="../static/js/units/{{ random_text }}"></script>
-<script type="text/javascript" src="../static/js/units/unit2.json"></script>
-
+<script type="text/javascript" src="../static/js/units/{{ random_text }}"></script> 
+<!--<script type="text/javascript" src="../static/js/units/unit1.json"></script> -->
 {% endblock %}
 
 
@@ -22,8 +21,7 @@
     <div class="head">
         <lable class="lable" for="units">Unit set:</lable>
         <select class="decks" name="units" id="decks">
-            <option id="u1" value="u1">Unit 1</option>
-            <option id="u2" value="u2">Unit 2</option>
+            <option id="u1" value="u1">{{ random_text }}</option>
         </select>
     </div>
 
