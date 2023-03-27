@@ -2,44 +2,58 @@
 
 {% block head %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../static/js/chat.js"></script>
+    <style>
+        .panel {
+            transition: none;
+        }
+
+        .panel:hover {
+            transform: none;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
 {% endblock %}
 
 
 {% block body %}
 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Talk. Now.</h4>
-                    </div>
-                    <div class="card-body container-chat" id="chat-window">
-                        <div id="chat-msg">
-                            <div class="text">Bruh</div>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Talk. Now.</h4>
+                </div>
+                <div class="panel-body container-chat" id="chat-window">
+                    <div id="chat-msg">
+                        <div class="text-row">
+                            <div class="text">Здравствуйте! Как у вас дела?</div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <form id="message-form">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="msg" placeholder="Type your message..." autocomplete="off" autofocus=true>
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">
-                                        <b>
-                                            >
-                                        </b>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                </div>
+                <div class="panel-footer">
+                    <form id="msg-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="msg" placeholder="Type your message..." autocomplete="off" autofocus>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">
+                                    <b>
+                                        >
+                                    </b>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+<script src="../static/js/chat.js"></script>
 
 {% endblock %}

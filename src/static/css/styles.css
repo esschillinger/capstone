@@ -342,14 +342,35 @@ nav .navbar-brand .blueviolet
     max-width: 40%;
     margin: 1.5%;
     padding: 1.5%;
-    display: block;
+    float: left;
+    /* display: block; */
+    font-size: 15px;
     color: white;
     background-color: #0b74e4;
     border-radius: 5px;
 }
 
 .text.user {
+    float: right;
+    display: block;
     margin-left: 58%;
     color: black;
     background-color: #f4eeee;
+}
+
+.text-row {
+    display: block;
+    width: 100%;
+}
+
+.grade {
+    background-image: url("../static/img/grade.png");
+    margin-top: 23px;
+    float: right;
+    width: 40px;
+    height: 40px;
+}
+
+.grade:hover {
+    cursor: pointer;
 }
