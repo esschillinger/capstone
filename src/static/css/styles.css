@@ -152,6 +152,21 @@ a.panel-a:hover {
  *  See typesprinter for examples
 */
 
+.sprint1-panel {
+    background-image: url("/static/img/sprint1-panel.PNG");
+    height: 300px;
+}
+
+.sprint2-panel {
+    background-image: url("/static/img/sprint2-panel.PNG");
+    height: 300px;
+}
+
+.sprint3-panel {
+    background-image: url("/static/img/sprint3-panel.PNG");
+    height: 300px;
+}
+
 .panel1 {
     background-image: url("/static/img/greetings.jpg");
 }

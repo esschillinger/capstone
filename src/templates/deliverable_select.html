@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "nav_home_layout.html" %}
 
 
 {% block title %}
@@ -17,48 +17,37 @@
 {% block body %}
 
 <div class="container">
-    <h1>Maybe put some introductory clause here or a different navbar than the one used inside the units, also remove underlining on hover</h1>
-    <div class="row">
-        <div class="col-sm-3">
-            <a href="/unit1" class="panel-link">
+    <!-- <h1>Talk about the sprints here (maybe)</h1> -->
+    <div class="row" style="margin-top: 10%;">
+        <div class="col-sm-4">
+            <a href="/sprint1" class="panel-link">
                 <div class="panel panel-default">
                     <div class="panel-title">
-                        <h3>{{ unit_names[0] }}</h3>
+                        <h3>Sprint 1</h3>
                     </div>
-                    <div class="panel-image panel1"></div>
+                    <div class="panel-image sprint1-panel"></div>
                     <div class="panel-body"></div>
                 </div>
             </a>
         </div>
-        <div class="col-sm-3">
-            <a href="/unit2" class="panel-link">
+        <div class="col-sm-4">
+            <a href="/sprint2" class="panel-link">
                 <div class="panel panel-default">
                     <div class="panel-title">
-                        <h3>{{ unit_names[1] }}</h3>
+                        <h3>Sprint 2</h3>
                     </div>
-                    <div class="panel-image panel2"></div>
+                    <div class="panel-image sprint2-panel"></div>
                     <div class="panel-body"></div>
                 </div>
             </a>
         </div>
-        <div class="col-sm-3">
-            <a href="/unit3" class="panel-link">
+        <div class="col-sm-4">
+            <a href="/sprint3" class="panel-link">
                 <div class="panel panel-default">
                     <div class="panel-title">
-                        <h3>{{ unit_names[2] }}</h3>
+                        <h3>Sprint 3</h3>
                     </div>
-                    <div class="panel-image panel3"></div>
-                    <div class="panel-body"></div>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a href="/unit4" class="panel-link">
-                <div class="panel panel-default">
-                    <div class="panel-title">
-                        <h3>{{ unit_names[3] }}</h3>
-                    </div>
-                    <div class="panel-image panel4"></div>
+                    <div class="panel-image sprint3-panel"></div>
                     <div class="panel-body"></div>
                 </div>
             </a>
