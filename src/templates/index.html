@@ -2,23 +2,25 @@
 
 {% block body %}
 
-<form action="/" method="post">
-    <label for="native_language">Select your native language:</label>
-    <select name="native_language" id="native_language">
-        <option value="english">English</option>
-        <option value="russian">Russian</option>
-    </select>
+<div class="language-select">
+    <form action="/" method="post">
+        <select name="native_language" id="native_language" class="form-control input-lg">
+            <option value="" disabled selected>Native Language</option>
+            <option value="english">English</option>
+            <option value="russian">Russian</option>
+        </select>
 
-    <br>
+        <br>
 
-    <label for="target_language">Select your target language:</label>
-    <select name="target_language" id="target_language">
-        <option value="english">English</option>
-        <option value="russian">Russian</option>
-    </select>
+        <select name="target_language" id="target_language" class="form-control input-lg">
+            <option value="" disabled selected>Target Language</option>
+            <option value="english">English</option>
+            <option value="russian">Russian</option>
+        </select>
 
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
+        <br><br>
+        <input type="submit" value="Submit" class="language-button">
+    </form>
+</div>
 
 {% endblock %}
