@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block head %}
+
+<link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Maybe put some introductory clause here or a different navbar than the one used inside the units, also remove underlining on hover</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/unit1" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[0] }}</h3>
+                    </div>
+                    <div class="panel-image panel1"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit2" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[1] }}</h3>
+                    </div>
+                    <div class="panel-image panel2"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit3" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[2] }}</h3>
+                    </div>
+                    <div class="panel-image panel3"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/unit4" class="panel-link">
+                <div class="panel panel-default">
+                    <div class="panel-title">
+                        <h3>{{ unit_names[3] }}</h3>
+                    </div>
+                    <div class="panel-image panel4"></div>
+                    <div class="panel-body"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+  
+{% endblock %}

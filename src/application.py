@@ -87,6 +87,11 @@ nav_tabs = {
     'russian' : ['Все Урокы', 'Словарь', 'Словарный Запас', 'Грамматика', 'Флешки', 'Говирить']
 }
 
+chat = {
+    'english' : 'Let\'s Talk!',
+    'russian' : 'Давайте Поговорим!'
+}
+
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -102,12 +107,22 @@ def index():
     session['nav_tabs'] = nav_tabs[session['native_language']]
 
     return redirect("/unitselect")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/deliverables")
+def deliverables():
+    return render_template("deliverable_select.html")
     
 
 @app.route("/unitselect", methods=['GET', 'POST'])
 def unit_selection():
     if request.method == 'GET':
-        return render_template("unitselect.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+        return render_template("unit_select.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
     
     session['unit'] = request.form.get('unit_num')
 
@@ -154,7 +169,7 @@ def flash_cards():
 def converse():
     # load unit-specific chat bot
 
-    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'], chat=chat[session['target_language']])
 
 
 

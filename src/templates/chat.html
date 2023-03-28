@@ -12,9 +12,6 @@
         }
     </style>
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
 {% endblock %}
 
 
@@ -25,12 +22,12 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Talk. Now.</h4>
+                    <h4>{{ chat }}</h4>
                 </div>
                 <div class="panel-body container-chat" id="chat-window">
                     <div id="chat-msg">
                         <div class="text-row">
-                            <div class="text">Здравствуйте! Как у вас дела?</div>
+                            <div class="text">Здравствуйте! Как у вас дела?</div> <!-- this text should be an opening message based on two parameters: (1) target language, and (2) unit -->
                         </div>
                     </div>
                 </div>
