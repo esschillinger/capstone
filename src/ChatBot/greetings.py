@@ -6,6 +6,7 @@ from chatterbot.storage import SQLStorageAdapter
 from chatterbot.search import IndexedTextSearch
 import chatterbot.comparisons
 import chatterbot.response_selection
+import nltk
 
 
 # Define the filename for the saved ChatBot
@@ -32,12 +33,21 @@ else:
     with open('human_chat.txt', 'r', encoding='utf-8') as f:
         training_data = f.read().splitlines()
 
-    #Train with many data sources
+
+    # Train with many data sources mentioned https://github.com/PolyAI-LDN/conversational-datasets
+    nltk.download('twitter_samples')
+    nltk.download('webtext')
+    nltk.download('movie_reviews')
+    nltk.download('punkt')
+
+    training_data.extend(nltk.corpus.twitter_samples.strings())
+    training_data.extend(nltk.corpus.webtext.words())
+    training_data.extend(nltk.corpus.movie_reviews.words())
 
     # Train the bot on the training data
     trainer = ListTrainer(bot)
     trainer.train(training_data)
-    print("Training complete!")
+print("Training complete!")
 
 # Define a function to greet the user
 def greet():
