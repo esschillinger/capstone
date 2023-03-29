@@ -1,11 +1,11 @@
 from flask_socketio import SocketIO, emit
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 # from werkzeug.security import check_password_hash, generate_password_hash
-from flask_session import Session
+# from flask_session import Session
 # from tempfile import mkdtemp
 # from cs50 import SQL
 # import os
-# import time
+import time
 
 # Configure application
 
@@ -77,9 +77,14 @@ unit_names = {
     'russian' : ['Приветствия', 'В Ресторане', 'Погода', 'Офис Врача']
 }
 
-nav_tabs = {
+nav_unit_tabs = {
     'english' : ['All Units', 'Dictionary', 'Vocab', 'Grammar', 'Flash Cards', 'Converse'],
     'russian' : ['Все Урокы', 'Словарь', 'Словарный Запас', 'Грамматика', 'Флешки', 'Говирить']
+}
+
+nav_home_tabs = {
+    'english' : ['Home', 'About', 'Deliverables'],
+    'russian' : ['Дом', 'О нас', 'Вещи Презентации']
 }
 
 chat = {
@@ -96,33 +101,37 @@ prompts = {
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
+    if session['nav_home_tabs'] == "":
+        session['nav_home_tabs'] = nav_home_tabs['english']
+
     if request.method == 'GET':
-        return render_template('index.html')
+        return render_template('index.html', nav_tabs=session['nav_home_tabs'])
     # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
 
     session['native_language'] = request.form.get('native_language')
     session['target_language'] = request.form.get('target_language')
 
     session['unit_names'] = unit_names[session['native_language']]
-    session['nav_tabs'] = nav_tabs[session['native_language']]
+    session['nav_home_tabs'] = nav_home_tabs[session['native_language']]
+    session['nav_unit_tabs'] = nav_unit_tabs[session['native_language']]
 
     return redirect("/unitselect")
 
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", nav_tabs=session['nav_home_tabs'])
 
 
 @app.route("/deliverables")
 def deliverables():
-    return render_template("deliverable_select.html")
+    return render_template("deliverable_select.html", nav_tabs=session['nav_home_tabs'])
     
 
 @app.route("/unitselect", methods=['GET', 'POST'])
 def unit_selection():
     if request.method == 'GET':
-        return render_template("unit_select.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+        return render_template("unit_select.html", unit_names=session['unit_names'], nav_tabs=session['nav_home_tabs'])
     
     session['unit'] = request.form.get('unit_num')
 
@@ -133,7 +142,7 @@ def unit1():
     unit_language = "unit1_" + session['target_language'] + ".html"
     print(unit_language)
 
-    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/unit2", methods=['GET', 'POST'])
@@ -141,35 +150,35 @@ def unit2():
     session['unit'] = 2
     unit_language = "unit2_" + session['target_language'] + ".html"
 
-    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/grammar")
 def grammar():
     grammar_unit = "unit" + str(session['unit']) + "_grammar_" + session['target_language'] + ".html"
 
-    return render_template(grammar_unit, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template(grammar_unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/dictionary")
 def dictionary():
     dictionary_language = session['native_language'] + "_" + session['target_language'] + "_dictionary.html"
 
-    return render_template(dictionary_language, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template(dictionary_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/cards")
 def flash_cards():
     unit = "unit" + str(session['unit']) + ".json"
 
-    return render_template("flashcards.html", unit=unit, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template("flashcards.html", unit=unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/chat")
 def converse():
     # load unit-specific chat bot
 
-    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'], chat=chat[session['target_language']])
+    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'], chat=chat[session['target_language']])
 
 
 # Websockets

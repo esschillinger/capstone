@@ -1,9 +1,10 @@
 {% extends "nav_home_layout.html" %}
 
+
 {% block body %}
 
 <div class="language-select">
-    <form action="/" method="post">
+    <form id="languages" action="/" method="post">
         <select name="native_language" id="native_language" class="form-control input-lg">
             <option value="" disabled selected>Native Language</option>
             <option value="english">English</option>
@@ -19,8 +20,10 @@
         </select>
 
         <br><br>
-        <input type="submit" value="Submit" class="language-button">
+        <input id="submit" type="submit" value="Submit" class="language-button" disabled>
     </form>
 </div>
+
+<script src="/static/js/index.js"></script>
 
 {% endblock %}

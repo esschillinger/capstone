@@ -22,7 +22,7 @@ body {
     width: 100%;
     height: 60px;
     border-radius: 5px;
-    opacity: 80%;
+    opacity: 70%;
     transition: all 0.1s;
 }
 
@@ -373,8 +373,8 @@ nav .navbar-brand .blueviolet
     float: left;
     /* display: block; */
     font-size: 15px;
-    color: white;
-    background-color: #0b74e4;
+    color: black;
+    background-color: #f4eeee;
     border-radius: 5px;
 }
 
@@ -382,8 +382,8 @@ nav .navbar-brand .blueviolet
     float: right !important;
     display: block;
     margin-left: 58%;
-    color: black;
-    background-color: #f4eeee;
+    color: white;
+    background-color: #0b74e4;
 }
 
 .text-row {

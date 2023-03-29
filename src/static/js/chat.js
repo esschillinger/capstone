@@ -9,16 +9,16 @@ socket.on('ai_response', function(message) { // 'message' is a dictionary contai
 
 
 var umsg_count = 0;
+var chat_window = document.getElementById("chat-window");
 
 $('#msg-form').submit(function(event) {
     umsg_count++;
     event.preventDefault();
 
     var msg = $('#msg').val();
-    $('#chat-msg').append('<div class="text-row"><img id="grade' + umsg_count + '" class="grade" src="../static/img/grade.png"><div class="text user">' + msg + '</div></div>'); // hehe it says "text user". What a frickin' goober, you use text?
+    $('#chat-msg').append('<div class="text-row"><img id="grade' + umsg_count + '" class="grade" src="../static/img/loading.gif"><div class="text user">' + msg + '</div></div>'); // hehe it says "text user". What a frickin' goober, you use text?
     $('#msg').val('');
 
-    var chat_window = document.getElementById("chat-window");
     chat_window.scrollTop = chat_window.scrollHeight;
 
     socket.emit('user_message', {
@@ -38,19 +38,19 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
         // TODO replace src links with the actual images once obtained
         case 10:
         case 9:
-            grade_icon.src = '../static/img/grade.png';
+            grade_icon.src = '../static/img/A.jpg';
             break;
         case 8:
-            grade_icon.src = '../static/img/grade.png';
+            grade_icon.src = '../static/img/B.png';
             break;
         case 7:
-            grade_icon.src = '../static/img/grade.png';
+            grade_icon.src = '../static/img/C.jpg';
             break;
         case 6:
-            grade_icon.src = '../static/img/grade.png';
+            grade_icon.src = '../static/img/D.png';
             break;
         default:
-            grade_icon.src = '../static/img/grade.png';
+            grade_icon.src = '../static/img/F.jpg';
             break;
     }
 
@@ -58,5 +58,6 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
 
     // TODO add AI response chat bubble
 
-    $('#chat-msg').append('<div class="text-row"><div class="text user">' + data + '</div></div>');
+    $('#chat-msg').append('<div class="text-row"><div class="text">' + data + '</div></div>');
+    chat_window.scrollTop = chat_window.scrollHeight;
 }
