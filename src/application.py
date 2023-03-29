@@ -1,9 +1,7 @@
-from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
-from helpers import get_vocab_list
+from flask_socketio import SocketIO, emit
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 # from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
-from enum import Enum
 # from tempfile import mkdtemp
 # from cs50 import SQL
 # import os
@@ -14,14 +12,11 @@ from enum import Enum
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-# app.config['SECRET_KEY'] = 'secret!'
-app.secret_key = 'bruh'
+app.config['SECRET_KEY'] = 'bruh'
 
 socketio = SocketIO(app)
+socketio.init_app(app, cors_allowed_origins="*")
 
-# Dictionary in the form { room_id : frequency } where frequency is the number of players in the room
-# form { room_id : passage }
-# form { room_id : number of completed passages }
 
 
 # Ensure responses aren't cached
@@ -92,6 +87,11 @@ chat = {
     'russian' : 'Давайте Поговорим!'
 }
 
+prompts = {
+    'english' : [''],
+    'russian' : [''],
+}
+
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -160,9 +160,9 @@ def dictionary():
 
 @app.route("/cards")
 def flash_cards():
-    random_text = "unit" + str(session['unit']) + ".json"
+    unit = "unit" + str(session['unit']) + ".json"
 
-    return render_template("flashcards.html", random_text=random_text, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
+    return render_template("flashcards.html", unit=unit, unit_names=session['unit_names'], nav_tabs=session['nav_tabs'])
 
 
 @app.route("/chat")
@@ -170,6 +170,44 @@ def converse():
     # load unit-specific chat bot
 
     return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_tabs'], chat=chat[session['target_language']])
+
+
+# Websockets
+
+@socketio.on('join', namespace='/gpt')
+def prompt_gpt():
+    # prompt GPT API when the chat page is loaded (maybe only do this on the first message sent to save tokens?)
+    # TODO
+
+    print('User joined \'/chat\'.')
+
+
+@socketio.on('leave', namespace='/gpt')
+def reset_gpt():
+    # maybe you need to clear the API here when the user leaves the chat page to start fresh
+    # Probably not though because GPT will be re-prompted when 'join' is emitted
+    # TODO
+
+    print('User left \'/chat\'.')
+
+
+@socketio.on('user_message', namespace='/gpt') # maybe need a namespace field here?
+def user_message(message):
+    # when the user sends a message
+    # pass to C-GPT API
+    # receive response
+    # emit response and grade
+    # note: 'message' is a dictionary containing the user message under the field 'data'
+    # TODO
+
+    print('User message: ' + message['data'])
+
+    emit('ai_response', {
+        'data' : 'This is a response to test socket functionality. Replace with GPT response when set up.',
+        'grade_msg' : 'Spelling: 0/10. Bad response.\nGrammar: 0/10. Equally bad response.',
+        'spelling' : 0,
+        'grammar' : 0
+    })
 
 
 
