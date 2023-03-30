@@ -101,12 +101,11 @@ prompts = {
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    if session['nav_home_tabs'] == "":
+    if 'nav_home_tabs' not in session: # app just launched
         session['nav_home_tabs'] = nav_home_tabs['english']
 
     if request.method == 'GET':
         return render_template('index.html', nav_tabs=session['nav_home_tabs'])
-    # language = <INSERT LANGUAGE BASED ON WHAT THEY CHOOSE> # possibly under a different route
 
     session['native_language'] = request.form.get('native_language')
     session['target_language'] = request.form.get('target_language')
@@ -213,7 +212,7 @@ def user_message(message):
 
     emit('ai_response', {
         'data' : 'This is a response to test socket functionality. Replace with GPT response when set up.',
-        'grade_msg' : 'Spelling: 0/10. Bad response.\nGrammar: 0/10. Equally bad response.',
+        'grade_msg' : 'Spelling: 0/10. Bad response.\nGrammar: 0/10. Equally bad response. You\'re just not that guy.',
         'spelling' : 0,
         'grammar' : 0
     })

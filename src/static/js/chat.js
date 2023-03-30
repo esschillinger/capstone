@@ -8,15 +8,25 @@ socket.on('ai_response', function(message) { // 'message' is a dictionary contai
 });
 
 
+// jQuery events
+
+
 var umsg_count = 0;
 var chat_window = document.getElementById("chat-window");
+var grade_descs = []
 
 $('#msg-form').submit(function(event) {
     umsg_count++;
     event.preventDefault();
 
     var msg = $('#msg').val();
-    $('#chat-msg').append('<div class="text-row"><img id="grade' + umsg_count + '" class="grade" src="../static/img/loading.gif"><div class="text user">' + msg + '</div></div>'); // hehe it says "text user". What a frickin' goober, you use text?
+    $('#chat-msg').append(`
+    <div class="text-row">
+        <input type="image" id="grade` + umsg_count + `" class="grade" src="../static/img/loading.gif" data-id="` + umsg_count + `" data-toggle="modal" data-target="#exampleModalCenter">
+        <div class="text user">
+            ` + msg + `
+        </div>
+    </div>`); // hehe it says "text user". What a frickin' goober, you use text?
     $('#msg').val('');
 
     chat_window.scrollTop = chat_window.scrollHeight;
@@ -27,10 +37,21 @@ $('#msg-form').submit(function(event) {
 });
 
 
+$(document).on("click", ".grade", function() {
+    var msg_num = $(this).data('id');
+    document.getElementById("mbody").innerHTML = grade_descs[parseInt(msg_num) - 1];
+});
+
+
+// Helper functions
+
+
 function addAIResponse(data, grade_msg, spelling, grammar) {
     // grade should change the overall letter grade displayed next to the user's message (currently a graph icon, want to change to an image reflecting the letter grade)
-    // when the grade is clicked, display the details (grade_msg)
+    // when the grade is clicked, display the details in a modal (body = grade_msg)
     // add chat bubble for AI response
+
+    grade_descs.push(grade_msg);
 
     var grade_icon = document.getElementById('grade' + umsg_count)
     switch(Math.floor((spelling + grammar) / 2)) {
@@ -56,8 +77,18 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
 
     // TODO set up grade details display when icon clicked
 
-    // TODO add AI response chat bubble
+    //grade_icon.onclick = 
 
-    $('#chat-msg').append('<div class="text-row"><div class="text">' + data + '</div></div>');
+    $('#chat-msg').append('<div class="text-row"><div class="text" data-container="body" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '">' + data + '</div></div>');
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
     chat_window.scrollTop = chat_window.scrollHeight;
+}
+
+
+function getTranslation(data) {
+    return "Translation goes here--use helper function <em>getTranslation()</em> bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh";
 }
