@@ -154,9 +154,9 @@ def unit2():
 
 @app.route("/grammar")
 def grammar():
-    grammar_unit = "unit" + str(session['unit']) + "_grammar_" + session['target_language'] + ".html"
+    unit = "unit" + str(session['unit']) + ".json"
 
-    return render_template(grammar_unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
+    return render_template("quiz.html", unit=unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/dictionary")

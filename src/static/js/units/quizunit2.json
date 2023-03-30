@@ -1,0 +1,20 @@
+quizQuestions = [
+    {
+      question: "1: Which answer is correct? (It's C)",
+      choices: {
+        a: 'wrong',
+        b: 'wrong',
+        c: 'right',
+        d: 'wrong'
+      },
+      correctAnswer: 'c'
+    },
+    {
+      question: "2: This statement is true",
+      choices: {
+        a: 'true',
+        b: 'false'
+      },
+      correctAnswer: 'a'
+    }
+  ];

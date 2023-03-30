@@ -1,0 +1,22 @@
+{% extends "nav_unit_layout.html" %}
+
+
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/quiz.css"/>
+<script type="text/javascript" src="../static/js/units/quiz{{ unit }}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+<div id="quiz"></div>
+<div class="button">
+    <button id="submit">Submit Answers</button>
+</div>
+<div id="results"></div>
+
+<script src="../static/js/quiz.js"></script>
+
+{% endblock %}
