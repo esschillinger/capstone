@@ -2,7 +2,8 @@ body{
     font-size: 20px;
     font-family: sans-serif;
     color: #333;
-    text-align: center
+    text-align: center;
+    font-weight: 100;
   }
   .question{
     font-weight: 600;

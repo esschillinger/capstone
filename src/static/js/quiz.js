@@ -17,16 +17,18 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
             + '<input type="radio" name="question'+i+'" value="'+letter+'">'
             + letter + ': '
             + questions[i].choices[letter]
+            + '&nbsp'
         + '</label>'
         );
     }
         // add question + choices
     output.push(
         '<div class="question">' + questions[i].question + '</div>'
-        + '<div class="choices">' + choices.join('') + '</div>' + '<br>'
+        + '<div class="choices" font-weight="100">' + choices.join('') + '</div>' + '<br>'
     );
     }
       // make one string and put on page
+    //choices.style.font-weight = "100";
     quizContainer.innerHTML = output.join('');
 }
   
