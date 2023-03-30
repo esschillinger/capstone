@@ -75,12 +75,8 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
             break;
     }
 
-    // TODO set up grade details display when icon clicked
-
-    //grade_icon.onclick = 
-
-    $('#chat-msg').append('<div class="text-row"><div class="text" data-container="body" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '">' + data + '</div></div>');
-
+    $('#chat-msg').append('<div class="text-row"><div class="text" data-container=".text" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '">' + data + '</div></div>');
+    //$('#chat-msg').append('<div style="background-color: green" class="text" data-container=".text" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '"></div>')
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -90,5 +86,5 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
 
 
 function getTranslation(data) {
-    return "Translation goes here--use helper function <em>getTranslation()</em> bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh";
+    return "Translation goes here, probably just make a socket so that we can use BeautifulSoup and webscrape for one with Google Translate. I ain't paying for no API";
 }

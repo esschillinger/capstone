@@ -429,6 +429,7 @@ nav .navbar-brand .blueviolet
     pointer-events: all;
 }
 
-/* .tooltip-inner {
-    max-width: 40% !important;
-} */
+.tooltip-inner {
+    max-width: 100% !important;
+    width: 384px;
+}
