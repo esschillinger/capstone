@@ -1,11 +1,14 @@
 from flask_socketio import SocketIO, emit
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from googletrans import Translator
+from random import randrange
+from helpers import temp_grades
 # from werkzeug.security import check_password_hash, generate_password_hash
 # from flask_session import Session
 # from tempfile import mkdtemp
 # from cs50 import SQL
 # import os
-import time
+# import time
 
 # Configure application
 
@@ -18,6 +21,7 @@ socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
 
 
+ts = Translator()
 
 # Ensure responses aren't cached
 @app.after_request
@@ -210,11 +214,14 @@ def user_message(message):
 
     print('User message: ' + message['data'])
 
+    temp = temp_grades[randrange(len(temp_grades))]
+
     emit('ai_response', {
-        'data' : 'This is a response to test socket functionality. Replace with GPT response when set up.',
-        'grade_msg' : 'Spelling: 0/10. Bad response.\nGrammar: 0/10. Equally bad response. You\'re just not that guy.',
-        'spelling' : 0,
-        'grammar' : 0
+        'data' : temp['data'],
+        'translation' : ts.translate(temp['data'], src=session['target_language'][:2], dest=session['native_language'][:2]).text,
+        'grade_msg' : temp['grade_msg'],
+        'spelling' : temp['spelling'],
+        'grammar' : temp['grammar']
     })
 
 

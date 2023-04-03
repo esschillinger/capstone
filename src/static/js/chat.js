@@ -4,7 +4,7 @@ var socket = io(namespace);
 socket.emit('join');
 
 socket.on('ai_response', function(message) { // 'message' is a dictionary containing the fields 'data', 'grade_msg', 'spelling', and 'grammar'
-    addAIResponse(message.data, message.grade_msg, message.spelling, message.grammar);
+    addAIResponse(message.data, message.translation, message.grade_msg, message.spelling, message.grammar);
 });
 
 
@@ -46,7 +46,7 @@ $(document).on("click", ".grade", function() {
 // Helper functions
 
 
-function addAIResponse(data, grade_msg, spelling, grammar) {
+function addAIResponse(text, translation, grade_msg, spelling, grammar) {
     // grade should change the overall letter grade displayed next to the user's message (currently a graph icon, want to change to an image reflecting the letter grade)
     // when the grade is clicked, display the details in a modal (body = grade_msg)
     // add chat bubble for AI response
@@ -75,16 +75,11 @@ function addAIResponse(data, grade_msg, spelling, grammar) {
             break;
     }
 
-    $('#chat-msg').append('<div class="text-row"><div class="text" data-container=".text" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '">' + data + '</div></div>');
+    $('#chat-msg').append('<div class="text-row"><div class="text" data-container=".text-row" data-toggle="tooltip" data-placement="top" title="' + translation + '">' + text + '</div></div>');
     //$('#chat-msg').append('<div style="background-color: green" class="text" data-container=".text" data-toggle="tooltip" data-placement="top" title="' + getTranslation(data) + '"></div>')
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
 
     chat_window.scrollTop = chat_window.scrollHeight;
-}
-
-
-function getTranslation(data) {
-    return "Translation goes here, probably just make a socket so that we can use BeautifulSoup and webscrape for one with Google Translate. I ain't paying for no API";
 }
