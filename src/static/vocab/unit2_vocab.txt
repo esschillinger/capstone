@@ -1,0 +1,150 @@
+Restaurant
+
+апельсин	orange
+банан		banana
+бифштекс	steak
+борщ		borsch
+бублик		bagel
+булка		white bread
+булочка		small roll
+бульон		buillon
+бутерброд	open-faced sandwich
+вино		wine
+виноград	grapes
+вода		water
+гамбургер	hamburger
+горчица		mustard
+гриб		mushroom
+закуски		appetizers
+икра		caviar
+капуста		cabbage
+картофель	potato/potatoes
+каша		hot cereal
+кефир		kefir
+колбаса		sausage
+конфеты		candy
+котлета		cutlet
+котлеты по-киевски	chicken Kiev
+кофе		coffee
+курица		chicken
+лимон		lemon
+лук		onion(s)
+макароны	macaroni
+масло		butter
+минеральная вода	mineral water
+молоко		milk
+морковь		carrot(s)
+мороженое	ice cream
+мясо		meat
+мясное ассорти	cold cuts assortment
+напиток		drink
+овощи		vegetables
+огурец		cucumber
+оливье		potato salad with chicken
+пельмени	pelmeni
+перец		pepper
+печенье		cookie
+пиво		beer
+пирожки		baked or fried dumplings
+пицца		pizza
+помидор		tomato
+пюре		creamy mashed potatoes
+рис		rice
+рыба		fish
+салат		salad
+сахар		sugar
+сладкое		dessert
+сметана		sour cream
+сок		juice
+соль		salt
+соус		sauce
+суп		soup
+сыр		cheese
+тесто		dough
+торт		cake
+фарш		ground meat
+фрукты		fruit
+хлеб		bread
+чай		tea
+чеснок		garlic
+шашлык		shish kabob
+щи		cabbage soup
+яблоко		apple
+яичница		cooked (not boiled) eggs
+яйцо		egg
+
+буфет		snack bar
+булочная	bakery
+гастроном	grocery store
+кафе		cafe
+кафетерий	snack bar
+продовольственный магазин	grocery store
+универсам	self-service grocery store
+аллергия	allergy
+вегетарианец/вегетерианка	vegetarian
+блюдо		dish
+бутылка		bottle
+второе		main course
+копейка		kopeck
+кухня		cuisine, style of cooking
+меню		menu
+официант/официанка	waiter/waitress
+первое		first course (always soup)
+порция		portion
+продукты	groceries
+счёт		bill, check
+чаевые		tip
+
+Adjectives
+вкусный		tasty, good
+минеральный	mineral
+молочный	milk, dairy
+мясной		meat
+никакой		none
+свежий		fresh
+томатный	tomato
+
+быть			to be
+брать/взять		to take
+готовить/приготовить	to cook, prepare
+делать/сделать		to do, make
+думать/подумать		to think
+есть/съесть		to eat
+заказывать		to order
+идти/пойти		to go (on foot or within a city)
+найти			to find
+обедать/пообедать	to have lunch
+писать/написать		to write
+пить/выпить		to drink
+показывать/показать	to show
+покупать/купить		to buy
+попасть			to manage to get in
+рассказывать/рассказать	to narrate, tell (a story)
+решать/решить		to decide
+слышать/слушать		to hear
+смотреть/посмотреть	to watch
+советовать/посоветовать	to advise
+ужинать/поунжинать	to have supper
+
+пока	meanwhile
+просто	simply, just
+страшно	terribly
+
+без	without
+с	with
+
+нельзя
+
+Во-первых..., Во-вторых...	In the first place..., in the second place...
+Дайте, пожалуйста, счёт!	Check, please!
+Если говорить о себе, то...	If I use myself as an example, then...
+Минуточку!			Just a minute!
+Мы точно попадём.		We'll get in for sure.
+Получите!			Take it! (said when paying)
+Пошли!				Let's go!
+Принесите, пожалуйста, меню!.	Please bring a menu.
+С...				Someone owes...
+Смотря...			It depends...
+С одной стороны..., с другой стороны...		On the one hand..., on the other hand...
+Что вы (нам, мне) посоветуете взять?	What do you advise (us, me) to order?
+Что ещё нужно?			What else is needed?
