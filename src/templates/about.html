@@ -121,6 +121,19 @@
     <br>
     <h3 style="font-size: 22px;">
         <b>
+            Bootstrap
+        </b>
+    </h3>
+    <p>
+        Bootstrap makes managing the CSS throughout the webpage substantially easier.
+        We can leverage the pre-existing CSS classes not only to create a more visually-appealing design, but also provide better functionality.
+        These features are most apparent in the chat window.
+        Detailed grade breakdowns are provided via modals when letter grades are clicked.
+        We also make use of Bootstrap's tooltips to easily and cleanly view message translations within conversations.
+    </p>
+    <br>
+    <h3 style="font-size: 22px;">
+        <b>
             OpenAI GPT3.5 API
         </b>
     </h3>
@@ -140,13 +153,25 @@
     <hr>
     <p style="margin-bottom: 7%;">
         A user is first greeted with a form to input both their native language and the language which they are trying to learn.
-        Upon submitting this information, there is a visually pleasing unit selection screen, with each panel presenting the focus of the unit.
+        Upon submitting this information, there is a very visually pleasing unit selection screen, with each panel presenting the focus of the unit.
+        Navigation bars are located along the top of the screen, allowing the user to easily traverse the website to the desired page at any moment.
         The user can click on whichever unit they would like to begin learning and/or practicing.
         The main unit page is introductory.
         At this point, the navigation bar adjusts to fit the unit content framework, presenting tabs including (but not limited to): a cross-language dictionary, the vocab and grammar of the unit, flash cards, quizzes, and the chat functionality.
         The dictionary tab will include a sizeable cross-language dictionary, which the user will be able to search in both languages.
         The vocabulary tab includes only the vocab directly relevant to the currently-selected unit.
-        Navigation bars are located along the top of the screen, allowing the user to easily traverse the website to the desired page at any moment.
+        The grammar quiz will contain verbs and grammatical concepts that pertain to the topics covered in the unit.
+        Flash cards provide an interactive way to test the user's command over the unit vocabulary.
+        These keep track of the terms that the user has missed and provides an opportunity to review them again at the end of the list.
+        Finally, the user can access the conversation tab.
+        The screen models a chat window in which the user is presented with a greeting message that will be tailored to the current unit.
+        For example, an example conversation for the <em>Restaurant</em> unit could be one between the user and a waiter who is taking their order.
+        With each message sent, a response will be generated, and a grade for the user's message will be provided.
+        The user will see this grade at a glance in the form of a standard letter grade, located to the left of the message.
+        The grade can then be clicked to view specific grading details, broken down by spelling and grammar (and potentially coherence as well).
+        There will be a short message explaining the reasoning behind the grades in each category.
+        If a user does not fully understand the response sent (they are learning, after all), the translation can be viewed by simply hovering over the message.
+        At any point, one can select a different unit or section within the unit.
     </p>
     
     
