@@ -1,35 +1,34 @@
-var myQuestions = u;
-var quizContainer = document.getElementById('quiz');
+var myWords = u;
+var nounContainer = document.getElementById('nouns');
+var adjContainer = document.getElementById('adjs');
+var verbContainer = document.getElementById('verbs');
+var advContainer = document.getElementById('adverbs');
+var prepContainer = document.getElementById('preps');
+var phraseContainer = document.getElementById('phrases');
   
-generateQuiz(myQuestions, quizContainer);
+generateWords(myWords, nounContainer, "noun");
+generateWords(myWords, adjContainer, "adj");
+generateWords(myWords, verbContainer, "verb");
+generateWords(myWords, advContainer, "adv");
+generateWords(myWords, prepContainer, "prep");
+generateWords(myWords, phraseContainer, "phrase");
   
-function generateQuiz(questions, quizContainer){
-    function showQuestions(questions, quizContainer){
+function generateWords(words, xContainer, type){
+    function showWords(words, xContainer){
     var output = [];
-    var choices;
-    for(var i=0; i<questions.length; i++){
-    choices = [];
-    for(letter in questions[i].choices){
-        choices.push(
-        '<label>'
-            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-            + letter + ': '
-            + questions[i].choices[letter]
-            + '&nbsp'
-        + '</label>'
-        );
-    }
-        // add question + choices
+    var defs;
+    for(var i=0; i<words.length; i++){
+        // add words + defs
+    if(words[i].Type == type)
     output.push(
-        '<div class="question">' + questions[i].Front + '</div>'
-        + '<div class="choices" font-weight="100">' + questions[i].Back + '</div>' + '<br>'
+        '<div class="question">' + words[i].Front + ' -- ' + words[i].Back + '</div>' 
     );
     }
       // make one string and put on page
     //choices.style.font-weight = "100";
-    quizContainer.innerHTML = output.join('');
+    xContainer.innerHTML = output.join('');
 }
-showQuestions(questions, quizContainer);
+showWords(words, xContainer);
 }
   
   
