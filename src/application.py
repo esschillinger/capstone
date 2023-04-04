@@ -160,9 +160,9 @@ def grammar():
 
 @app.route("/dictionary")
 def dictionary():
-    dictionary_language = session['native_language'] + "_" + session['target_language'] + "_dictionary.html"
+    unit = "unit" + str(session['unit']) + ".json"
 
-    return render_template(dictionary_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
+    return render_template("dictionary.html", unit = unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
 @app.route("/cards")

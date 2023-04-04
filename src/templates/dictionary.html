@@ -1,0 +1,31 @@
+{% extends "nav_unit_layout.html" %}
+
+
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/dictionary.css"/>
+<script type="text/javascript" src="../static/js/units/card{{ unit }}"></script>
+
+
+{% endblock %}
+
+{% block body %}
+<h1>Dictionary</h1>
+<br>
+<h3>Nouns</h3>
+<div id="nouns"></div>
+<h3>Adjectives</h3>
+<div id="adjs"></div>
+<h3>Verbs</h3>
+<div id="verbs"></div>
+<h3>Adverbs</h3>
+<div id="adverbs"></div>
+<h3>Prepositions</h3>
+<div id="preps"></div>
+<h3>Phrases</h3>
+<div id="phrases"></div>
+
+<script src="../static/js/dictionary.js"></script>
+
+{% endblock %}
