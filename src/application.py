@@ -87,8 +87,8 @@ nav_unit_tabs = {
 }
 
 nav_home_tabs = {
-    'english' : ['Home', 'About', 'Deliverables'],
-    'russian' : ['Дом', 'О нас', 'Вещи Презентации']
+    'english' : ['Home', 'About'],
+    'russian' : ['Дом', 'О нас']
 }
 
 chat = {
@@ -125,11 +125,6 @@ def index():
 def about():
     return render_template("about.html", nav_tabs=session['nav_home_tabs'])
 
-
-@app.route("/deliverables")
-def deliverables():
-    return render_template("deliverable_select.html", nav_tabs=session['nav_home_tabs'])
-    
 
 @app.route("/unitselect", methods=['GET', 'POST'])
 def unit_selection():

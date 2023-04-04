@@ -133,7 +133,7 @@ Adjectives
 без	without
 с	with
 
-нельзя
+нельзя  it is not permitted
 
 Во-первых..., Во-вторых...	In the first place..., in the second place...
 Дайте, пожалуйста, счёт!	Check, please!

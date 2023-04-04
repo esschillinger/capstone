@@ -504,6 +504,10 @@ u =[
       "Back": "with"
     },
     {
+      "Front": "нельзя",
+      "Back": "it is not permitted"
+    }
+    {
       "Front": "Во-первых..., Во-вторых...",
       "Back": "In the first place..., in the second place..."
     },
