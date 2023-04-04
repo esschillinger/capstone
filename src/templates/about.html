@@ -91,26 +91,62 @@
     <br>
     <h2>
         <b>
-            Approach
+            Tools/APIs/Frameworks
         </b>
     </h2>
     <hr>
-    <h3>
+    <h3 style="font-size: 22px;">
         <b>
-            Tools/APIs/Frameworks
+            Flask
         </b>
     </h3>
     <p>
-        Bruh bruh bruh
+        FluencyForge's backend is supported by Flask and Socket.IO, two libraries in Python that are used to host web apps.
+        Flask allows for routes that are used to navigate across webpages, while maintaining session data throughout.
+        This helps keep track of information like the user's chosen native and target languages, as well as which unit the user is working on for conversation scenario prompting.
+        Flask also makes use of another library called Jinja to provide consistent webpage layouts that may be extended by other HTML documents; this is especially useful when dealing with universal elements like navigation bars.
     </p>
     <br>
-    <h3>
+    <h3 style="font-size: 22px;">
+        <b>
+            Socket.IO
+        </b>
+    </h3>
+    <p>
+        Socket.IO enables us to create a seamless chat environment with a cycle of calls to <em>emit()</em> and <em>on()</em>.
+        The backend Python application waits to receive a user message, at which point the message is to be passed to the GPT API.
+        Once a response is generated, the application emits the response and the grade for the user's previous message.
+        These items are then immediately displayed on the screen, without the need to refresh the webpage.
+    </p>
+    <br>
+    <h3 style="font-size: 22px;">
+        <b>
+            OpenAI GPT3.5 API
+        </b>
+    </h3>
+    <p>
+        The core functionality of the conversations will be controlled by OpenAI's GPT API.
+        OpenAI provides a library in Python to make use of their language models; this is the perfect application of such models, as realistic conversational data is required in the use case of improving human language learning.
+        While we have determined the prompts required to tailor the model's functionality to our specific use cases, we have not yet implemented them programmatically via API calls.
+        This is, naturally, our top priority for Sprint 3.
+        Unfortunately, the models are locked behind a slight paywall, but it is a small price to pay to meet our end goals.
+    </p>
+    <br>
+    <h2>
         <b>
             User Experience
         </b>
-    </h3>
+    </h2>
+    <hr>
     <p style="margin-bottom: 7%;">
-        Bruh bruh bruh
+        A user is first greeted with a form to input both their native language and the language which they are trying to learn.
+        Upon submitting this information, there is a visually pleasing unit selection screen, with each panel presenting the focus of the unit.
+        The user can click on whichever unit they would like to begin learning and/or practicing.
+        The main unit page is introductory.
+        At this point, the navigation bar adjusts to fit the unit content framework, presenting tabs including (but not limited to): a cross-language dictionary, the vocab and grammar of the unit, flash cards, quizzes, and the chat functionality.
+        The dictionary tab will include a sizeable cross-language dictionary, which the user will be able to search in both languages.
+        The vocabulary tab includes only the vocab directly relevant to the currently-selected unit.
+        Navigation bars are located along the top of the screen, allowing the user to easily traverse the website to the desired page at any moment.
     </p>
     
     

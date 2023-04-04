@@ -632,7 +632,7 @@ u =[
     "Type": "subjectless",
     "Front": "нельзя",
     "Back": "it is not permitted"
-  }
+  },
   {
     "Type": "phrase",
     "Front": "Во-первых..., Во-вторых...",
