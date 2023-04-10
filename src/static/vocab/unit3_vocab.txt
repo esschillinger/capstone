@@ -1,16 +1,17 @@
-благодарение thanksgiving; act of thanking
-весна, весной spring, in the spring
-ветер wind
-вокзал (нa) train station
-время года (мн. ч. времена, времён,
-временам, -ами, -ах года) season
-гора (мн. ч. горы, гор, горам, -ами, -ах) mountain
-градус (5–20 градусов) degree(s)
-дождь (дождя, дождём, мн. ч. дожди) rain
-зима, зимой winter, in the winter
-зонт(ик) umbrella
-информация information
 Nouns
+благодарение thanksgiving; act of thanking
+весна; spring
+весной; in the spring
+ветер; wind
+вокзал (нa); train station
+время года; season
+гора; mountain
+градус; degree(s)
+дождь; rain
+зима; winter
+зимой; in the winter
+зонт(ик); umbrella
+информация; information
 календарь;  calendar
 климат; climate
 кyпальник; women’s bathing suit
