@@ -151,6 +151,14 @@ def unit2():
     return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
+@app.route("/unit3", methods=['GET', 'POST'])
+def unit3():
+    session['unit'] = 3
+    unit_language = "unit3_" + session['target_language'] + ".html"
+
+    return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
+
+
 @app.route("/grammar")
 def grammar():
     unit = "unit" + str(session['unit']) + ".json"
