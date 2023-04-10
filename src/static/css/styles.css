@@ -392,7 +392,7 @@ nav .navbar-brand .blueviolet
 }
 
 .grade {
-    background-image: url("../static/img/grade.png");
+    /* background-image: url("/static/img/grade.png"); */
     margin-top: 23px;
     float: right;
     width: 40px;

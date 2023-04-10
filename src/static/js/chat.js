@@ -22,7 +22,7 @@ $('#msg-form').submit(function(event) {
     var msg = $('#msg').val();
     $('#chat-msg').append(`
     <div class="text-row">
-        <input type="image" id="grade` + umsg_count + `" class="grade" src="../static/img/loading.gif" data-id="` + umsg_count + `" data-toggle="modal" data-target="#exampleModalCenter">
+        <input type="image" id="grade` + umsg_count + `" class="grade" src="/static/img/loading.gif" data-id="` + umsg_count + `" data-toggle="modal" data-target="#exampleModalCenter">
         <div class="text user">
             ` + msg + `
         </div>
@@ -59,19 +59,19 @@ function addAIResponse(text, translation, grade_msg, spelling, grammar) {
         // TODO replace src links with the actual images once obtained
         case 10:
         case 9:
-            grade_icon.src = '../static/img/A.jpg';
+            grade_icon.src = '/static/img/A.jpg';
             break;
         case 8:
-            grade_icon.src = '../static/img/B.png';
+            grade_icon.src = '/static/img/B.png';
             break;
         case 7:
-            grade_icon.src = '../static/img/C.jpg';
+            grade_icon.src = '/static/img/C.jpg';
             break;
         case 6:
-            grade_icon.src = '../static/img/D.png';
+            grade_icon.src = '/static/img/D.png';
             break;
         default:
-            grade_icon.src = '../static/img/F.jpg';
+            grade_icon.src = '/static/img/F.jpg';
             break;
     }
 
