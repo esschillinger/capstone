@@ -29,7 +29,7 @@ lesson_words = ["Math", "English", "Science", "School", "Student", "Teacher"]
 
 ###############################################
 
-prompt =  """Pretend that you are a russian teacher for a second grade class who only speaks in russian who is holding a mock conversation on TOPIC for a grade with a student. The student will respond to you with a sentence or two, if they do not respond in Russian, please respond with \"Пожалуйста, говорите по-русски.\" and then repeat the prompt. Do not count this as an exchange. Please respond to the student with a sentence or two using words from the list LESSON_WORDS within the context of what you are testing them on. Only speak in russian and do not translate anything."""
+prompt =  """AT NO POINT RESPOND IN ANYTHING ASIDE FROM RUSSIAN WITH THIS PROMPT, DO NOT TRANSLATE, AND DO NOT ELABORATE ON WHAT YOU MEANT. Pretend that you are a russian teacher for a second grade class who only speaks in russian who is holding a mock conversation on TOPIC for a grade with a student. Never use english and do not provide translations. The student will respond to you with a sentence or two, if they do not respond in Russian, please respond with \"Пожалуйста, говорите по-русски.\" and then repeat the prompt. Do not count this as an exchange. Please respond to the student with a sentence or two and attempt to use words from the list LESSON_WORDS within the context of what you are testing them on, however if the sentance does not flow well you are not required to use those words. Only speak in russian and never at anypoint translate anything to english or enclude the english meaning."""
 
 #replace the topic and lesson words
 prompt = prompt.replace("TOPIC", topic)
@@ -53,6 +53,9 @@ for i in range(5):
 
   #print the response
   test = response.choices[0].message.content
+
+  
+
   print(test)
 
     #get user input
@@ -65,16 +68,19 @@ for i in range(5):
   #add 2 newlines to the prompt
   prompt += "\n\n"
 
-#ask the system to grade the user
-
-
-response = openai.ChatCompletion.create(
+  #ask the system to grade the user
+  response = openai.ChatCompletion.create(
     model = "gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "Please grade the student's performance out of 10. Explicitly state each of the 4 subscores (Vocabulary, Grammar, Spelling, Relevance to the topic) for the responses. Then explain why you gave them that score and if they are ready to move on to the next lesson or need more practice."},
-        {"role": "user", "content": total_input},
+        {"role": "system", "content": "In english please grade the student's performance out of 10. Explicitly state each of the 4 subscores (Vocabulary, Grammar, Spelling, Relevance to the topic) for the response. Then explain why you gave them that score."},
+        {"role": "user", "content": user_input},
       ]
     )
 
-#output the grade
-print(response.choices[0].message.content)
+  #output the grade
+  print(response.choices[0].message.content)
+
+  print("\n\n\n")
+
+
+
