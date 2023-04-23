@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flash Card System with Animated Flipping using Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- originally Bootstrap 4.0.0 -->
+<link rel="stylesheet" href="styles.css"> 
+</head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" id="card1">
+            <div class="card-front">
+              <h3>Question</h3>
+              <p>What is the capital of France?</p>
+            </div>
+            <div class="card-back">
+              <h3>Answer</h3>
+              <p>Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card" id="card2">
+            <div class="card-front">
+              <h3>Question</h3>
+              <p>What is the largest planet in the solar system?</p>
+            </div>
+            <div class="card-back">
+              <h3>Answer</h3>
+              <p>Jupiter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#card1, #card2').click(function() {
+          $(this).toggleClass('flipped');
+})});
+</script>
+</body>
+</html>
