@@ -53,10 +53,8 @@ function addAIResponse(text, translation, grade_msg, spelling, grammar) {
 
     grade_descs.push(grade_msg);
 
-    var grade_icon = document.getElementById('grade' + umsg_count)
-    switch(Math.floor((spelling + grammar) / 2)) {
-        // change grade icon to be image corresponding to grade
-        // TODO replace src links with the actual images once obtained
+    var grade_icon = document.getElementById('grade' + umsg_count);
+    switch (Math.floor((spelling + grammar) / 2)) {
         case 10:
         case 9:
             grade_icon.src = '/static/img/A.jpg';
@@ -83,3 +81,50 @@ function addAIResponse(text, translation, grade_msg, spelling, grammar) {
 
     chat_window.scrollTop = chat_window.scrollHeight;
 }
+
+
+// on-screen keyboard
+
+var input = document.getElementById("msg");
+var keyboard = document.querySelectorAll(".key");
+var admin_keys = [ // administrative, aka non-text
+    "←",
+    "Пробел"
+];
+
+keyboard.forEach(function(key) {
+    key.addEventListener("click", function() {
+
+    var key_pressed = key.innerHTML;
+    var text = input.value;
+
+    for (var i = 0; i < admin_keys.length; i++) {
+        if (key_pressed == admin_keys[i]) {
+            if (key_pressed == "←") {
+                input.value = input.value.substring(0, input.value.length - 1);
+            } else if (key_pressed == "Пробел") {
+                input.value += " ";
+            }
+            document.getElementById("msg").focus();
+            return;
+        }
+    }
+    input.value = text + key_pressed;
+    document.getElementById("msg").focus();
+    });
+});
+
+var show = 0;
+$('.keyboard-container').css("display", "none");
+
+
+$(document).on("click", "#kb", function() {
+    show = !show;
+    if (show) {
+        $('.keyboard-container').css("display", "flex");
+        $('.container-chat').css("height", "310px");
+    } else {
+        $('.keyboard-container').css("display", "none");
+        $('.container-chat').css("height", "500px");
+    }
+});
