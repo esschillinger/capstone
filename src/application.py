@@ -159,8 +159,13 @@ def unit3():
     return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
-@app.route("/grammar")
+@app.route("grammar")
 def grammar():
+    return render_template("grammar.html")
+
+
+@app.route("/exercises")
+def exercises():
     unit = "unit" + str(session['unit']) + ".json"
 
     return render_template("quiz.html", unit=unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
