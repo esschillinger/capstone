@@ -1,1 +1,71 @@
 {% extends "nav_unit_layout.html" %}
+
+
+{% block head %}
+
+    <link rel="stylesheet" href="/static/css/unit_home.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="img-body">
+        <img class="home-img" src="/static/img/weather_homepage.jpg">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="/unit1" class="panel-link">
+                    <h3>Коммуникативные задания</h3>
+                    <ul>
+                        <li>Describing the weather</li>
+                        <li>Preparing for travel</li>
+                        <li>Weather reports</li>
+                    </ul>
+                    <!-- <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3>bruh</h3>
+                        </div>
+                        <div class="panel-image panel1"></div>
+                        <div class="panel-body"></div>
+                    </div> -->
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="/unit2" class="panel-link">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3>bruh</h3>
+                        </div>
+                        <div class="panel-image panel2"></div>
+                        <div class="panel-body"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="/unit3" class="panel-link">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3>bruh</h3>
+                        </div>
+                        <div class="panel-image panel3"></div>
+                        <div class="panel-body"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="/unit4" class="panel-link">
+                    <div class="panel panel-default">
+                        <div class="panel-title">
+                            <h3>bruh</h3>
+                        </div>
+                        <div class="panel-image panel4"></div>
+                        <div class="panel-body"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
