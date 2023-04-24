@@ -48,6 +48,12 @@ def gradeResponse():
   #if RelevanceGrade has a / in it then delete it
   if RelevanceGrade.find("/") != -1:
     RelevanceGrade = RelevanceGrade[0]
+
+ #get everything from "Exlpaination: " to the end of the string and store it in explanation
+  explanation = grade[grade.find("Relevance to the topic: ") + 28:]
+  
+  #print the explanation
+  print("Explanation: " + explanation)
  
 
   #print the scores
