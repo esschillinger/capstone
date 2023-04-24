@@ -1,25 +1,31 @@
-var myWords = u;
-var nounContainer = document.getElementById('nouns');
-var adjContainer = document.getElementById('adjs');
-var verbContainer = document.getElementById('verbs');
-var advContainer = document.getElementById('adverbs');
-var prepContainer = document.getElementById('preps');
-var phraseContainer = document.getElementById('phrases');
+var myWords2 = u2;
+var myWords3 = u3;
+var myWords = myWords2.concat(myWords3)
+
+myWords.sort((a, b) => {
+    const nameA = a.Front.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.Front.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
   
-generateWords(myWords, nounContainer, "noun");
-generateWords(myWords, adjContainer, "adj");
-generateWords(myWords, verbContainer, "verb");
-generateWords(myWords, advContainer, "adv");
-generateWords(myWords, prepContainer, "prep");
-generateWords(myWords, phraseContainer, "phrase");
+    // names must be equal
+    return 0;
+  });
+
+var nounContainer = document.getElementById('words');
   
-function generateWords(words, xContainer, type){
+generateWords(myWords, nounContainer);
+  
+function generateWords(words, xContainer, ){
     function showWords(words, xContainer){
     var output = [];
     var defs;
     for(var i=0; i<words.length; i++){
         // add words + defs
-    if(words[i].Type == type)
     output.push(
         '<div class="question">' + words[i].Front + ' -- ' + words[i].Back + '</div>' 
     );

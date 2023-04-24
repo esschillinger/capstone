@@ -1,0 +1,516 @@
+u3 =[
+    {
+      "Type": "noun",
+      "Front": "благодарение",
+      "Back": "thanksgiving; act of thanking"
+    },
+    {
+      "Type": "noun",
+      "Front": "весна",
+      "Back": "spring"
+    },
+    {
+      "Type": "noun",
+      "Front": "весной",
+      "Back": "in the spring"
+    },
+    {
+      "Type": "noun",
+      "Front": "ветер",
+      "Back": "wind"
+    },
+    {
+      "Type": "noun",
+      "Front": "вокзал (нa)",
+      "Back": "train station"
+    },
+    {
+      "Type": "noun",
+      "Front": "время года",
+      "Back": "season"
+    },
+    {
+      "Type": "noun",
+      "Front": "гора",
+      "Back": "mountain"
+    },
+    {
+      "Type": "noun",
+      "Front": "градус",
+      "Back": "degree(s)"
+    },
+    {
+      "Type": "noun",
+      "Front": "дождь",
+      "Back": "rain"
+    },
+    {
+      "Type": "noun",
+      "Front": "зима",
+      "Back": "winter"
+    },
+    {
+      "Type": "noun",
+      "Front": "зимой",
+      "Back": "in the winter"
+    },
+    {
+      "Type": "noun",
+      "Front": "зонт(ик)",
+      "Back": "umbrella"
+    },
+    {
+      "Type": "noun",
+      "Front": "информация",
+      "Back": "information"
+    },
+    {
+      "Type": "noun",
+      "Front": "календарь",
+      "Back": "calendar"
+    },
+    {
+      "Type": "noun",
+      "Front": "климат",
+      "Back": "climate"
+    },
+    {
+      "Type": "noun",
+      "Front": "кyпальник",
+      "Back": "women’s bathing suit"
+    },
+    {
+      "Type": "noun",
+      "Front": "лес",
+      "Back": "forest"
+    },
+    {
+      "Type": "noun",
+      "Front": "лето",
+      "Back": "summer"
+    },
+    {
+      "Type": "noun",
+      "Front": "летом",
+      "Back": "in the summer"
+    },
+    {
+      "Type": "noun",
+      "Front": "лыжи",
+      "Back": "skis"
+    },
+    {
+      "Type": "noun",
+      "Front": "место",
+      "Back": "place"
+    },
+    {
+      "Type": "noun",
+      "Front": "море",
+      "Back": "sea"
+    },
+    {
+      "Type": "noun",
+      "Front": "мороз",
+      "Back": "frost; intensely cold weather"
+    },
+    {
+      "Front": "озеро",
+      "Back": "lake"
+    },
+    {
+      "Type": "noun",
+      "Front": "осень",
+      "Back": "осень"
+    },
+    {
+      "Type": "noun",
+      "Front": "осенью",
+      "Back": "in the autumn"
+    },
+    {
+      "Type": "noun",
+      "Front": "плавки",
+      "Back": "men’s bathing suit"
+    },
+    {
+      "Type": "noun",
+      "Front": "плащ",
+      "Back": "raincoat"
+    },
+    {
+      "Type": "noun",
+      "Front": "пляж",
+      "Back": "beach"
+    },
+    {
+      "Type": "noun",
+      "Front": "погода",
+      "Back": "weather"
+    },
+    {
+      "Type": "noun",
+      "Front": "приезд",
+      "Back": "arrival"
+    },
+    {
+      "Type": "noun",
+      "Front": "путешествие",
+      "Back": "travel"
+    },
+    {
+      "Type": "noun",
+      "Front": "снег",
+      "Back": "snow"
+    },
+    {
+      "Type": "noun",
+      "Front": "солнце",
+      "Back": "sun; sunshine"
+    },
+    {
+      "Type": "noun",
+      "Front": "электричка",
+      "Back": "suburban train"
+    },
+    {
+      "Type": "noun",
+      "Front": "январь",
+      "Back": "January"
+    },
+    {
+      "Type": "noun",
+      "Front": "февраль",
+      "Back": "February"
+    },
+    {
+      "Type": "noun",
+      "Front": "март",
+      "Back": "March"
+    },
+    {
+      "Type": "noun",
+      "Front": "апрель",
+      "Back": "April"
+    },
+    {
+      "Type": "noun",
+      "Front": "май",
+      "Back": "May"
+    },
+    {
+      "Type": "noun",
+      "Front": "июнь",
+      "Back": "June"
+    },
+    {
+      "Type": "noun",
+      "Front": "июль",
+      "Back": "July"
+    },
+    {
+      "Type": "noun",
+      "Front": "август",
+      "Back": "August"
+    },
+    {
+      "Type": "noun",
+      "Front": "сентябрь",
+      "Back": "September"
+    },
+    {
+      "Type": "noun",
+      "Front": "октябрь",
+      "Back": "October"
+    },
+    {
+      "Type": "noun",
+      "Front": "ноябрь",
+      "Back": "November"
+    },
+    {
+      "Type": "noun",
+      "Front": "декабрь",
+      "Back": "December"
+    },
+    {
+      "Type": "adj",
+      "Front": "грустный",
+      "Back": "sad"
+    },
+    {
+      "Type": "adj",
+      "Front": "жаркий",
+      "Back": "hot"
+    },
+    {
+      "Type": "adj",
+      "Front": "прекрасный",
+      "Back": "wonderful; beautiful"
+    },
+    {
+      "Type": "adj",
+      "Front": "прохладный",
+      "Back": "cool"
+    },
+    {
+      "Type": "adj",
+      "Front": "такой",
+      "Back": "such; so"
+    },
+    {
+      "Type": "adj",
+      "Front": "тёплый",
+      "Back": "warm"
+    },
+    {
+      "Type": "adj",
+      "Front": "холодный",
+      "Back": "cold"
+    },
+    {
+      "Type": "adj",
+      "Front": "чудесный; wonderful",
+      "Back": "wonderful; fabulous"
+    },
+    {
+      "Type": "adj",
+      "Front": "готов",
+      "Back": "ready"
+    },
+    {
+      "Type": "adj",
+      "Front": "одет",
+      "Back": "dressed"
+    },
+    {
+      "Type": "adj",
+      "Front": "прав",
+      "Back": "right, correct"
+    },
+    {
+      "Type": "verb",
+      "Front": "бывать",
+      "Back": "to tend to be"
+    },
+    {
+      "Type": "verb",
+      "Front": "возвращаться/вернуться",
+      "Back": "to return, go back"
+    },
+    {
+      "Type": "verb",
+      "Front": "гулять/погулять",
+      "Back": "to stroll, take a walk"
+    },
+    {
+      "Type": "verb",
+      "Front": "загорать",
+      "Back": "to sunbathe"
+    },
+    {
+      "Type": "verb",
+      "Front": "кататься на велосипеде",
+      "Back": "to ride a bicycle"
+    },
+    {
+      "Type": "verb",
+      "Front": "кататься на коньках",
+      "Back": "to skate"
+    },
+    {
+      "Type": "verb",
+      "Front": "кататься на лыжaх",
+      "Back": "to ski"
+    },
+    {
+      "Type": "verb",
+      "Front": "купаться",
+      "Back": "to swim"
+    },
+    {
+      "Type": "verb",
+      "Front": "получать/получить",
+      "Back": "to receive"
+    },
+    {
+      "Type": "verb",
+      "Front": "собирать",
+      "Back": "to collect, gather"
+    },
+    {
+      "Type": "verb",
+      "Front": "собираться",
+      "Back": "to plan (to do something)"
+    },
+    {
+      "Type": "verb",
+      "Front": "узнавать/узнать",
+      "Back": "to find out"
+    },
+    {
+      "Type": "verb",
+      "Front": "встречаться/встретиться",
+      "Back": "to meet up (with each other)"
+    },
+    {
+      "Type": "verb",
+      "Front": "начинаться",
+      "Back": "to begin"
+    },
+    {
+      "Type": "adv",
+      "Front": "весело",
+      "Back": "happy, fun"
+    },
+    {
+      "Type": "adv",
+      "Front": "вообще",
+      "Back": "in general"
+    },
+    {
+      "Type": "adv",
+      "Front": "грустно",
+      "Back": "sad"
+    },
+    {
+      "Type": "adv",
+      "Front": "действительно",
+      "Back": "really"
+    },
+    {
+      "Type": "adv",
+      "Front": "довольно",
+      "Back": "fairly"
+    },
+    {
+      "Type": "adv",
+      "Front": "жарко",
+      "Back": "hot"
+    },
+    {
+      "Type": "adv",
+      "Front": "обязательно",
+      "Back": "surely"
+    },
+    {
+      "Type": "adv",
+      "Front": "отлично",
+      "Back": "excellent"
+    },
+    {
+      "Type": "adv",
+      "Front": "пораньше",
+      "Back": "a little earlier"
+    },
+    {
+      "Type": "adv",
+      "Front": "прекрасно",
+      "Back": "wonderful, beautiful"
+    },
+    {
+      "Type": "adv",
+      "Front": "прохладно",
+      "Back": "cool"
+    },
+    {
+      "Type": "adv",
+      "Front": "совсем",
+      "Back": "quite; completely"
+    },
+    {
+      "Type": "adv",
+      "Front": "так",
+      "Back": "such; so"
+    },
+    {
+      "Type": "adv",
+      "Front": "тепло",
+      "Back": "warm"
+    },
+    {
+      "Type": "adv",
+      "Front": "холодно",
+      "Back": "cold"
+    },
+    {
+      "Type": "phrase",
+      "Front": "если..., то",
+      "Back": "if..., then"
+    },
+    {
+      "Type": "phrase",
+      "Front": "всего (+ number)",
+      "Back": "only (+ number)"
+    },
+    {
+      "Type": "phrase",
+      "Front": "всё-таки",
+      "Back": "nevertheless; all the same"
+    },
+    {
+      "Type": "phrase",
+      "Front": "Давай(те) (+ мы form of verb in future)",
+      "Back": "Let’s (+ verb)"
+    },
+    {
+      "Type": "phrase",
+      "Front": "Давай(те) лучше ...",
+      "Back": "Let’s ... instead"
+    },
+    {
+      "Type": "phrase",
+      "Front": "Здорово!",
+      "Back": "Great!; Cool!"
+    },
+    {
+      "Type": "phrase",
+      "Front": "Идёт дождь.",
+      "Back": "It is raining."
+    },
+    {
+      "Type": "phrase",
+      "Front": "ли",
+      "Back": "if; whether"
+    },
+    {
+      "Type": "phrase",
+      "Front": "минус",
+      "Back": "minus"
+    },
+    {
+      "Type": "phrase",
+      "Front": "на улице",
+      "Back": "outside"
+    },
+    {
+      "Type": "phrase",
+      "Front": "(не) так(ой) ..., как ...",
+      "Back": "(not) as ... as ..."
+    },
+    {
+      "Type": "phrase",
+      "Front": "неужели",
+      "Back": "Really ...?"
+    },
+    {
+      "Type": "phrase",
+      "Front": "по Цельсию",
+      "Back": "in Celsius"
+    },
+    {
+      "Type": "phrase",
+      "Front": "по Фаренгейту",
+      "Back": "in Fahrenheit"
+    },
+    {
+      "Type": "phrase",
+      "Front": "Приезжай(те)/Приxoди(тe) в гости.",
+      "Back": "Come for a visit."
+    },
+    {
+      "Type": "phrase",
+      "Front": "Светит солнце.",
+      "Back": "The sun is shining."
+    }
+  ]

@@ -1,0 +1,696 @@
+u2 =[
+  {
+    "Type": "noun",
+    "Front": "апельсин",
+    "Back": "orange"
+  },
+  {
+    "Type": "noun",
+    "Front": "банан",
+    "Back": "banana"
+  },
+  {
+    "Type": "noun",
+    "Front": "бифштекс",
+    "Back": "steak"
+  },
+  {
+    "Type": "noun",
+    "Front": "борщ",
+    "Back": "borsch"
+  },
+  {
+    "Type": "noun",
+    "Front": "бублик",
+    "Back": "bagel"
+  },
+  {
+    "Type": "noun",
+    "Front": "булка",
+    "Back": "white bread"
+  },
+  {
+    "Type": "noun",
+    "Front": "булочка",
+    "Back": "small roll"
+  },
+  {
+    "Type": "noun",
+    "Front": "бульон",
+    "Back": "buillon"
+  },
+  {
+    "Type": "noun",
+    "Front": "бутерброд",
+    "Back": "open-faced sandwich"
+  },
+  {
+    "Type": "noun",
+    "Front": "вино",
+    "Back": "wine"
+  },
+  {
+    "Type": "noun",
+    "Front": "виноград",
+    "Back": "grapes"
+  },
+  {
+    "Type": "noun",
+    "Front": "вода",
+    "Back": "water"
+  },
+  {
+    "Type": "noun",
+    "Front": "гамбургер",
+    "Back": "hamburger"
+  },
+  {
+    "Type": "noun",
+    "Front": "горчица	",
+    "Back": "mustard"
+  },
+  {
+    "Type": "noun",
+    "Front": "гриб",
+    "Back": "mushroom"
+  },
+  {
+    "Type": "noun",
+    "Front": "закуски",
+    "Back": "appetizers"
+  },
+  {
+    "Type": "noun",
+    "Front": "икра",
+    "Back": "caviar"
+  },
+  {
+    "Type": "noun",
+    "Front": "капуста",
+    "Back": "cabbage"
+  },
+  {
+    "Type": "noun",
+    "Front": "картофель",
+    "Back": "potato/potatoes"
+  },
+  {
+    "Type": "noun",
+    "Front": "каша",
+    "Back": "hot cereal"
+  },
+  {
+    "Type": "noun",
+    "Front": "кефир",
+    "Back": "kefir"
+  },
+  {
+    "Type": "noun",
+    "Front": "колбаса",
+    "Back": "sausage"
+  },
+  {
+    "Type": "noun",
+    "Front": "конфеты",
+    "Back": "candy"
+  },
+  {
+    "Front": "котлета",
+    "Back": "cutlet"
+  },
+  {
+    "Type": "noun",
+    "Front": "котлеты по-киевски",
+    "Back": "chicken Kiev"
+  },
+  {
+    "Type": "noun",
+    "Front": "кофе",
+    "Back": "coffee"
+  },
+  {
+    "Type": "noun",
+    "Front": "курица",
+    "Back": "chicken"
+  },
+  {
+    "Type": "noun",
+    "Front": "лимон",
+    "Back": "lemon"
+  },
+  {
+    "Type": "noun",
+    "Front": "лук",
+    "Back": "onion(s)"
+  },
+  {
+    "Type": "noun",
+    "Front": "макароны",
+    "Back": "macaroni"
+  },
+  {
+    "Type": "noun",
+    "Front": "масло",
+    "Back": "butter"
+  },
+  {
+    "Type": "noun",
+    "Front": "минеральная вода",
+    "Back": "mineral water"
+  },
+  {
+    "Type": "noun",
+    "Front": "молоко",
+    "Back": "milk"
+  },
+  {
+    "Type": "noun",
+    "Front": "морковь",
+    "Back": "carrot(s)"
+  },
+  {
+    "Type": "noun",
+    "Front": "мороженое",
+    "Back": "ice cream"
+  },
+  {
+    "Type": "noun",
+    "Front": "мясо",
+    "Back": "meat"
+  },
+  {
+    "Type": "noun",
+    "Front": "мясное ассорти",
+    "Back": "cold cuts assortment"
+  },
+  {
+    "Type": "noun",
+    "Front": "напиток",
+    "Back": "drink"
+  },
+  {
+    "Type": "noun",
+    "Front": "овощи",
+    "Back": "vegetables"
+  },
+  {
+    "Type": "noun",
+    "Front": "огурец",
+    "Back": "cucumber"
+  },
+  {
+    "Type": "noun",
+    "Front": "оливье",
+    "Back": "potato salad with chicken"
+  },
+  {
+    "Type": "noun",
+    "Front": "пельмени",
+    "Back": "pelmeni"
+  },
+  {
+    "Type": "noun",
+    "Front": "перец",
+    "Back": "pepper"
+  },
+  {
+    "Type": "noun",
+    "Front": "печенье",
+    "Back": "cookie"
+  },
+  {
+    "Type": "noun",
+    "Front": "пиво",
+    "Back": "beer"
+  },
+  {
+    "Type": "noun",
+    "Front": "пирожки",
+    "Back": "baked or fried dumplings"
+  },
+  {
+    "Type": "noun",
+    "Front": "пицца",
+    "Back": "pizza"
+  },
+  {
+    "Type": "noun",
+    "Front": "помидор",
+    "Back": "tomato"
+  },
+  {
+    "Type": "noun",
+    "Front": "пюре",
+    "Back": "creamy mashed potatoes"
+  },
+  {
+    "Type": "noun",
+    "Front": "рис",
+    "Back": "rice"
+  },
+  {
+    "Type": "noun",
+    "Front": "рыба",
+    "Back": "fish"
+  },
+  {
+    "Type": "noun",
+    "Front": "салат",
+    "Back": "salad"
+  },
+  {
+    "Type": "noun",
+    "Front": "сахар",
+    "Back": "sugar"
+  },
+  {
+    "Type": "noun",
+    "Front": "сладкое",
+    "Back": "dessert"
+  },
+  {
+    "Type": "noun",
+    "Front": "сметана",
+    "Back": "sour cream"
+  },
+  {
+    "Type": "noun",
+    "Front": "сок",
+    "Back": "juice"
+  },
+  {
+    "Type": "noun",
+    "Front": "соль",
+    "Back": "salt"
+  },
+  {
+    "Type": "noun",
+    "Front": "соус",
+    "Back": "sauce"
+  },
+  {
+    "Type": "noun",
+    "Front": "суп",
+    "Back": "soup"
+  },
+  {
+    "Type": "noun",
+    "Front": "сыр",
+    "Back": "cheese"
+  },
+  {
+    "Type": "noun",
+    "Front": "тесто",
+    "Back": "dough"
+  },
+  {
+    "Type": "noun",
+    "Front": "торт",
+    "Back": "cake"
+  },
+  {
+    "Type": "noun",
+    "Front": "фарш",
+    "Back": "ground meat"
+  },
+  {
+    "Type": "noun",
+    "Front": "фрукты",
+    "Back": "fruit"
+  },
+  {
+    "Type": "noun",
+    "Front": "хлеб",
+    "Back": "bread"
+  },
+  {
+    "Type": "noun",
+    "Front": "чай",
+    "Back": "tea"
+  },
+  {
+    "Type": "noun",
+    "Front": "чеснок",
+    "Back": "garlic"
+  },
+  {
+    "Type": "noun",
+    "Front": "шашлык",
+    "Back": "shish kabob"
+  },
+  {
+    "Type": "noun",
+    "Front": "щи",
+    "Back": "cabbage soup"
+  },
+  {
+    "Type": "noun",
+    "Front": "яблоко",
+    "Back": "apple"
+  },
+  {
+    "Type": "noun",
+    "Front": "яичница",
+    "Back": "cooked (not boiled) eggs"
+  },
+  {
+    "Type": "noun",
+    "Front": "яйцо",
+    "Back": "egg"
+  },
+  {
+    "Type": "noun",
+    "Front": "буфет",
+    "Back": "snack bar"
+  },
+  {
+    "Type": "noun",
+    "Front": "булочная",
+    "Back": "bakery"
+  },
+  {
+    "Type": "noun",
+    "Front": "гастроном",
+    "Back": "grocery store"
+  },
+  {
+    "Type": "noun",
+    "Front": "кафе",
+    "Back": "cafe"
+  },
+  {
+    "Type": "noun",
+    "Front": "кафетерий",
+    "Back": "snack bar"
+  },
+  {
+    "Type": "noun",
+    "Front": "продовольственный магазин",
+    "Back": "grocery store"
+  },
+  {
+    "Type": "noun",
+    "Front": "универсам",
+    "Back": "self-service grocery store"
+  },
+  {
+    "Type": "noun",
+    "Front": "аллергия",
+    "Back": "allergy"
+  },
+  {
+    "Type": "noun",
+    "Front": "вегетарианец/вегетерианка",
+    "Back": "vegetarian"
+  },
+  {
+    "Type": "noun",
+    "Front": "блюдо",
+    "Back": "dish"
+  },
+  {
+    "Type": "noun",
+    "Front": "бутылка",
+    "Back": "bottle"
+  },
+  {
+    "Type": "noun",
+    "Front": "второе",
+    "Back": "main course"
+  },
+  {
+    "Type": "noun",
+    "Front": "копейка",
+    "Back": "kopeck"
+  },
+  {
+    "Type": "noun",
+    "Front": "кухня",
+    "Back": "cuisine, style of cooking"
+  },
+  {
+    "Type": "noun",
+    "Front": "меню",
+    "Back": "menu"
+  },
+  {
+    "Type": "noun",
+    "Front": "официант/официанка",
+    "Back": "waiter/waitress"
+  },
+  {
+    "Type": "noun",
+    "Front": "первое",
+    "Back": "first course (always soup)"
+  },
+  {
+    "Type": "noun",
+    "Front": "порция",
+    "Back": "portion"
+  },
+  {
+    "Type": "noun",
+    "Front": "продукты",
+    "Back": "groceries"
+  },
+  {
+    "Type": "noun",
+    "Front": "счёт",
+    "Back": "bill, check"
+  },
+  {
+    "Type": "noun",
+    "Front": "чаевые",
+    "Back": "tip"
+  },
+  {
+    "Type": "adj",
+    "Front": "вкусный",
+    "Back": "tasty, good"
+  },
+  {
+    "Type": "adj",
+    "Front": "минеральный",
+    "Back": "mineral"
+  },
+  {
+    "Type": "adj",
+    "Front": "молочный",
+    "Back": "milk, dairy"
+  },
+  {
+    "Type": "adj",
+    "Front": "мясной",
+    "Back": "meat"
+  },
+  {
+    "Type": "adj",
+    "Front": "никакой",
+    "Back": "none"
+  },
+  {
+    "Type": "adj",
+    "Front": "свежий",
+    "Back": "fresh"
+  },
+  {
+    "Type": "adj",
+    "Front": "томатный",
+    "Back": "tomato"
+  },
+  {
+    "Type": "verb",
+    "Front": "быть",
+    "Back": "to be"
+  },
+  {
+    "Type": "verb",
+    "Front": "брать/взять",
+    "Back": "to take"
+  },
+  {
+    "Type": "verb",
+    "Front": "готовить/приготовить",
+    "Back": "to cook, prepare"
+  },
+  {
+    "Type": "verb",
+    "Front": "делать/сделать",
+    "Back": "to do, make"
+  },
+  {
+    "Type": "verb",
+    "Front": "думать/подумать",
+    "Back": "to think"
+  },
+  {
+    "Type": "verb",
+    "Front": "есть/съесть",
+    "Back": "to eat"
+  },
+  {
+    "Type": "verb",
+    "Front": "заказывать",
+    "Back": "to order"
+  },
+  {
+    "Type": "verb",
+    "Front": "идти/пойти",
+    "Back": "to go (on foot or within a city)"
+  },
+  {
+    "Type": "verb",
+    "Front": "найти",
+    "Back": "to find"
+  },
+  {
+    "Type": "verb",
+    "Front": "обедать/пообедать",
+    "Back": "to have lunch"
+  },
+  {
+    "Type": "verb",
+    "Front": "писать/написать",
+    "Back": "to write"
+  },
+  {
+    "Type": "verb",
+    "Front": "пить/выпить",
+    "Back": "to drink"
+  },
+  {
+    "Type": "verb",
+    "Front": "показывать/показать",
+    "Back": "to show"
+  },
+  {
+    "Type": "verb",
+    "Front": "покупать/купить",
+    "Back": "to buy"
+  },
+  {
+    "Type": "verb",
+    "Front": "попасть",
+    "Back": "to manage to get in"
+  },
+  {
+    "Type": "verb",
+    "Front": "рассказывать/рассказать",
+    "Back": "to narrate, tell (a story)"
+  },
+  {
+    "Type": "verb",
+    "Front": "решать/решить",
+    "Back": "to decide"
+  },
+  {
+    "Type": "verb",
+    "Front": "слышать/слушать",
+    "Back": "to hear"
+  },
+  {
+    "Type": "verb",
+    "Front": "смотреть/посмотреть",
+    "Back": "to watch"
+  },
+  {
+    "Type": "verb",
+    "Front": "советовать/посоветовать",
+    "Back": "to advise"
+  },
+  {
+    "Type": "verb",
+    "Front": "ужинать/поунжинать",
+    "Back": "to have supper"
+  },
+  {
+    "Type": "adv",
+    "Front": "пока",
+    "Back": "meanwhile"
+  },
+  {
+    "Type": "adv",
+    "Front": "просто",
+    "Back": "simply, just"
+  },
+  {
+    "Type": "adv",
+    "Front": "страшно",
+    "Back": "terribly"
+  },
+  {
+    "Type": "prep",
+    "Front": "без",
+    "Back": "without"
+  },
+  {
+    "Type": "prep",
+    "Front": "с",
+    "Back": "with"
+  },
+  {
+    "Type": "subjectless",
+    "Front": "нельзя",
+    "Back": "it is not permitted"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Во-первых..., Во-вторых...",
+    "Back": "In the first place..., in the second place..."
+  },
+  {
+    "Type": "phrase",
+    "Front": "Дайте, пожалуйста, счёт!",
+    "Back": "Check, please!"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Если говорить о себе, то...",
+    "Back": "If I use myself as an example, then..."
+  },
+  {
+    "Type": "phrase",
+    "Front": "Минуточку!",
+    "Back": "Just a minute!"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Мы точно попадём.",
+    "Back": "We'll get in for sure."
+  },
+  {
+    "Type": "phrase",
+    "Front": "Получите!",
+    "Back": "Take it! (said when paying)"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Пошли!",
+    "Back": "Let's go!"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Принесите, пожалуйста, меню!.",
+    "Back": "Please bring a menu."
+  },
+  {
+    "Type": "phrase",
+    "Front": "Смотря...",
+    "Back": "It depends..."
+  },
+  {
+    "Type": "phrase",
+    "Front": "С одной стороны..., с другой стороны...",
+    "Back": "On the one hand..., on the other hand..."
+  },
+  {
+    "Type": "phrase",
+    "Front": "Что вы (нам, мне) посоветуете взять?",
+    "Back": "What do you advise (us, me) to order?"
+  },
+  {
+    "Type": "phrase",
+    "Front": "Что ещё нужно?",
+    "Back": "What else is needed?"
+  }
+]

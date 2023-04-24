@@ -172,6 +172,11 @@ def dictionary():
 
     return render_template("dictionary.html", unit = unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
+@app.route("/vocab")
+def vocab():
+    unit = "unit" + str(session['unit']) + ".json"
+
+    return render_template("vocab.html", unit = unit, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 @app.route("/cards")
 def flash_cards():
