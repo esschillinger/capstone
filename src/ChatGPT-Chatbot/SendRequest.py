@@ -13,8 +13,8 @@ def gradeResponse():
       ]
     )
 
-  #output the grade
-  print(response.choices[0].message.content)
+  #output the grade (debugging tool)
+  #print(response.choices[0].message.content)
 
   #parse the grade response for the scores of vocab, grammar, spelling, and relevance int VocabGrade, GrammarGrade, SpellingGrade, and RelevanceGrade
 
