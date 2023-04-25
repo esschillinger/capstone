@@ -2,7 +2,7 @@ from flask_socketio import SocketIO, emit
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from googletrans import Translator
 from random import randrange
-from helpers import temp_grades
+import openai
 # from werkzeug.security import check_password_hash, generate_password_hash
 # from flask_session import Session
 # from tempfile import mkdtemp
@@ -82,8 +82,8 @@ unit_names = {
 }
 
 nav_unit_tabs = {
-    'english' : ['All Units', 'Dictionary', 'Vocab', 'Grammar', 'Flash Cards', 'Converse'],
-    'russian' : ['Все Урокы', 'Словарь', 'Словарный Запас', 'Грамматика', 'Флешки', 'Говирить']
+    'english' : ['All Units', 'Dictionary', 'Vocab', 'Exercises', 'Flash Cards', 'Converse'],
+    'russian' : ['Все Урокы', 'Словарь', 'Словарный Запас', 'Упражнение', 'Флешки', 'Говирить']
 }
 
 nav_home_tabs = {
@@ -159,7 +159,7 @@ def unit3():
     return render_template(unit_language, unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'])
 
 
-@app.route("grammar")
+@app.route("/grammar")
 def grammar():
     return render_template("grammar.html")
 
@@ -193,8 +193,33 @@ def flash_cards():
 @app.route("/chat")
 def converse():
     # load unit-specific chat bot
+    #key is on my desktop in PASSCODES.txt file
 
-    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'], chat=chat[session['target_language']])
+    with open('C:\\Users\\eschillinger\\Desktop\\PASSCODE.txt') as f:
+        lines = f.readlines()
+        key = lines[0].strip()
+
+    openai.api_key = key
+
+    session['prompt'] =  """AT NO POINT RESPOND IN ANYTHING ASIDE FROM RUSSIAN WITH THIS PROMPT, DO NOT TRANSLATE, AND DO NOT ELABORATE ON WHAT YOU MEANT. You are a russian teacher for a second grade class who only speaks in russian who is holding a conversation on TOPIC for a grade with a student. Only take the role of the strict teacher. Never use english and do not provide translations. The student respond with a sentence or two, if they do not respond in Russian, please respond with \"Пожалуйста, говорите по-русски.\" and then repeat the previous prompt. Do not count this as an exchange. Please respond to the student with a sentence or two within the context of what you are testing them on. Only speak in russian and never at any point translate anything to english or include the english meaning."""
+    session['prompt'] = session['prompt'].replace("TOPIC", "[" + unit_names['english'][session['unit'] - 1] + "]")
+
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo", # The deployment name you chose when you deployed the ChatGPT or GPT-4 model.
+        messages = [
+            {
+                "role" : "system",
+                "content" : session['prompt']
+            },
+            {
+                "role" : "user",
+                "content" : ""
+            },
+        ]
+    )
+    first_message = response.choices[0].message.content
+
+    return render_template("chat.html", unit_names=session['unit_names'], nav_tabs=session['nav_unit_tabs'], chat=chat[session['target_language']], first_message=first_message)
 
 
 # Websockets
@@ -225,20 +250,97 @@ def user_message(message):
     # note: 'message' is a dictionary containing the user message under the field 'data'
     # TODO
 
-    print('User message: ' + message['data'])
+    # user message stored in message['data']
+    session['prompt'] += message['data'] + '\n\n'
 
-    temp = temp_grades[randrange(len(temp_grades))]
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages = [
+            {
+                "role" : "system",
+                "content" : session['prompt']
+            },
+            {
+                "role" : "user",
+                "content" : message['data']
+            },
+        ]
+    )
+    reply = response.choices[0].message.content
+
+    # format = (VocabGrade, GrammarGrade, SpellingGrade, RelevanceGrade, explanation)
+    grades = gradeResponse(message['data'])
 
     emit('ai_response', {
-        'data' : temp['data'],
-        'translation' : ts.translate(temp['data'], src=session['target_language'][:2], dest=session['native_language'][:2]).text,
-        'grade_msg' : temp['grade_msg'],
-        'spelling' : temp['spelling'],
-        'grammar' : temp['grammar']
+        'data' : reply,
+        'translation' : ts.translate(reply, src=session['target_language'][:2], dest=session['native_language'][:2]).text,
+        'grade_msg' : grades[4],
+        'spelling' : grades[2],
+        'grammar' : grades[1],
+        'vocab' : grades[0],
+        'revelance' : grades[3]
     })
 
 
 
+
+
+def gradeResponse(user_input):
+    #ask the system to grade the user
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages = [
+            {
+                "role" : "system",
+                "content" : "Please explicitly grade the student's performance out of 10. Explicitly state each of the 4 subscores (Vocabulary, Grammar, Spelling, Relevance to the topic) for the response each out of 10 as well. Then explain why you gave them that score."
+            },
+            {
+                "role" : "user",
+                "content" : user_input
+            },
+        ]
+    )
+
+    #output the grade (debugging tool)
+    #print(response.choices[0].message.content)
+
+    #parse the grade response for the scores of vocab, grammar, spelling, and relevance int VocabGrade, GrammarGrade, SpellingGrade, and RelevanceGrade
+
+    #get the grade
+    grade = response.choices[0].message.content
+
+    #get the vocab grade
+    VocabGrade = grade[grade.find("Vocabulary: ") + 12]
+    VocabGrade += grade[grade.find("Vocabulary: ") + 13]
+    #if VocabGrade has a / in it then delete it
+    if VocabGrade.find("/") != -1:
+        VocabGrade = VocabGrade[0]
+
+    #get the grammar grade
+    GrammarGrade = grade[grade.find("Grammar: ") + 9]
+    GrammarGrade += grade[grade.find("Grammar: ") + 10]
+    #if GrammarGrade has a / in it then delete it
+    if GrammarGrade.find("/") != -1:
+        GrammarGrade = GrammarGrade[0]
+
+    #get the spelling grade
+    SpellingGrade = grade[grade.find("Spelling: ") + 10]
+    SpellingGrade += grade[grade.find("Spelling: ") + 11]
+    #if SpellingGrade has a / in it then delete it
+    if SpellingGrade.find("/") != -1:
+        SpellingGrade = SpellingGrade[0]
+
+    #get the relevance grade
+    RelevanceGrade = grade[grade.find("Relevance to the topic: ") + 24]
+    RelevanceGrade += grade[grade.find("Relevance to the topic: ") + 25]
+    #if RelevanceGrade has a / in it then delete it
+    if RelevanceGrade.find("/") != -1:
+        RelevanceGrade = RelevanceGrade[0]
+
+    #get everything from "Exlpaination: " to the end of the string and store it in explanation
+    explanation = grade[grade.find("Relevance to the topic: ") + 28:]
+    
+    return VocabGrade, GrammarGrade, SpellingGrade, RelevanceGrade, explanation
 
 
 # Old typesprinter routes, for reference only

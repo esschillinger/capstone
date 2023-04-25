@@ -4,7 +4,7 @@ var socket = io(namespace);
 socket.emit('join');
 
 socket.on('ai_response', function(message) { // 'message' is a dictionary containing the fields 'data', 'grade_msg', 'spelling', and 'grammar'
-    addAIResponse(message.data, message.translation, message.grade_msg, message.spelling, message.grammar);
+    addAIResponse(message.data, message.translation, message.grade_msg, message.spelling, message.grammar, message.vocab, message.relevance);
 });
 
 
@@ -46,15 +46,22 @@ $(document).on("click", ".grade", function() {
 // Helper functions
 
 
-function addAIResponse(text, translation, grade_msg, spelling, grammar) {
+function addAIResponse(text, translation, grade_msg, spelling, grammar, vocab, relevance) {
     // grade should change the overall letter grade displayed next to the user's message (currently a graph icon, want to change to an image reflecting the letter grade)
     // when the grade is clicked, display the details in a modal (body = grade_msg)
     // add chat bubble for AI response
 
-    grade_descs.push(grade_msg);
+    var explanation = "";
+    explanation += "<p>Spelling: " + spelling + "/10</p>";
+    explanation += "<p>Grammar: " + grammar + "/10</p>";
+    explanation += "<p>Vocab: " + vocab + "/10</p>";
+    //explanation += "<p>Relevance: " + relevance + "/10</p>";
+    explanation += "<p>" + grade_msg + "</p>";
+
+    grade_descs.push(explanation);
 
     var grade_icon = document.getElementById('grade' + umsg_count);
-    switch (Math.floor((spelling + grammar) / 2)) {
+    switch (Math.floor((parseInt(spelling) + parseInt(grammar) + parseInt(vocab)) / 3)) {
         case 10:
         case 9:
             grade_icon.src = '/static/img/A.jpg';
