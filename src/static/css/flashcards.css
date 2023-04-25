@@ -54,7 +54,7 @@ th {
         position: relative;
         transition: transform 0.3s;
         transform-style: preserve-3d;
-        width: 70%;
+        width: 600px;
 }
 
 

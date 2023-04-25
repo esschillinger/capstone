@@ -1,6 +1,6 @@
 quizQuestions = [
     {
-      question: "Выберите нужную форму. Select the required form.\n1: В феврале в Москве погода бывает очень _____________.",
+      question: "Выберите нужную форму. Select the required form.<br><br>1: В феврале в Москве погода бывает очень _____________.",
       choices: {
         a: 'холодно',
         b: 'холодная',
@@ -62,5 +62,65 @@ quizQuestions = [
         b: 'прохладно'
       },
       correctAnswer: 'a'
+    },
+    {
+      question: "Заполните пропуски. Fill in the blanks using correct forms of the words given.<br>When choosing the long form (adjective), be sure to make it agree with its noun!<br><br>Какая погода бывает у вас в январе?<br><br>9: У нас _________ климат. Обычно бывает градусов 15–20.",
+      choices: {
+        a: 'холодный',
+        b: 'холодно',
+        c: 'тёплый',
+        d: 'тепло'
+      },
+      correctAnswer: 'c'
+    },
+    {
+      question: "10: Так _________! У вас зимы нет!",
+      choices: {
+        a: 'холодный',
+        b: 'холодно',
+        c: 'тёплый',
+        d: 'тепло'
+      },
+      correctAnswer: 'd'
+    },
+    {
+      question: "11: А у нас очень _________: часто бывает минус 20.",
+      choices: {
+        a: 'холодный',
+        b: 'холодно',
+        c: 'тёплый',
+        d: 'тепло'
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "12: Неужели у вас такая _________ погода!",
+      choices: {
+        a: 'холодная',
+        b: 'холодно',
+        c: 'тёплый',
+        d: 'тепло'
+      },
+      correctAnswer: 'a'
+    },
+    {
+      question: "13: А летом у вас _________?",
+      choices: {
+        a: 'прохладный ',
+        b: 'прохладно, ',
+        c: 'жаркий ',
+        d: 'жарко'
+      },
+      correctAnswer: 'd'
+    },
+    {
+      question: "14: Да, летом у нас бывает очень _________ погода. Все купаются и загорают.",
+      choices: {
+        a: 'прохладный ',
+        b: 'прохладно, ',
+        c: 'жаркий',
+        d: 'жаркая'
+      },
+      correctAnswer: 'd'
     }
   ];
