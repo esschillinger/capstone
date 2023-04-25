@@ -67,7 +67,7 @@ function addAIResponse(text, translation, grade_msg, spelling, grammar, vocab, r
             grade_icon.src = '/static/img/A.jpg';
             break;
         case 8:
-            grade_icon.src = '/static/img/B.png';
+            grade_icon.src = '/static/img/B.jpg';
             break;
         case 7:
             grade_icon.src = '/static/img/C.jpg';
