@@ -1,7 +1,5 @@
 #use openai to send a basic hello world request
 import openai
-import os
-import json
 
 def gradeResponse():
     #ask the system to grade the user
