@@ -31,5 +31,13 @@ body{
   #submit:hover{
     background-color: rgb(32, 4, 97);
   }
-  
-  
+
+  .interactive-paragraph {
+    margin-left: 10%;
+    width: 80%;
+    text-align: justify;
+  }
+
+  a {
+    text-decoration: underline;
+  }
